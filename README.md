@@ -11,3 +11,10 @@
 - Andreas Martin
 - Charuta Pande
 - Devid Montecchiari
+
+ # Introduction
+ 
+ ## Project Goals :checkered_flag:
+ xxx
+
+ AS-IS Prozess
