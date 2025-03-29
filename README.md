@@ -1,6 +1,6 @@
 # GWP Training Program: Process Flow from Planning to Certificate Issuance
 
-![GWP Training Program Banner] (ed05d23c_0b76_44af_aaa2_dda39cc0b202.jpg)
+
 # Introduction 📥
 
 
