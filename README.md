@@ -11,12 +11,12 @@
 | Anaïs von Dach | 
 | Micaela Palma Costa | 
 
-# Coaches
+# Coaches 🔍
 - Andreas Martin
 - Charuta Pande
 - Devid Montecchiari
 
- # Introduction
+ # Introduction 📥
  xxxx
 
  # AS-IS Prozess
