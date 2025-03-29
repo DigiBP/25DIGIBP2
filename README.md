@@ -13,8 +13,19 @@
 - Devid Montecchiari
 
  # Introduction
- 
- ## Project Goals :checkered_flag:
- xxx
+ xxxx
 
- AS-IS Prozess
+ # AS-IS Prozess
+
+ ## Project Goals :checkered_flag:
+
+# To-Be Process
+
+## Business Perspective
+
+# Implementation
+
+# Outlook
+
+
+
