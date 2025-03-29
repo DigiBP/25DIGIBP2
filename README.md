@@ -1,5 +1,28 @@
 ![GWP Picture.](https://www.google.com/maps/contrib/106032049836634214420/photos/@47.3664882,8.5327165,3a,75y,90t/data=!3m7!1e2!3m5!1sAF1QipMThA9lO9eTOYULh87er_suSkm2386nq5kteTw7!2e10!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMThA9lO9eTOYULh87er_suSkm2386nq5kteTw7%3Dw586-h260-k-no!7i2000!8i887!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D)
 
+name: Update TOC
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  update-toc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update TOC
+        uses: technote-space/toc-generator@v4
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add README.md
+          git commit -m "Auto-update TOC" || echo "No changes to commit"
+          git push
 
 
 # Team Members 👥
