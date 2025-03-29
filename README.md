@@ -17,7 +17,7 @@
 - Devid Montecchiari
 
  # Introduction 📥
- xxxx
+ # GWP Training Program: Process Flow from Planning to Certificate Issuance
 
  # AS-IS Prozess 🚩
 The current training program process at GWP is structured but involves multiple tools and manual steps across various platforms. It starts with internal planning, where training dates are coordinated, and calendar invitations for Microsoft Teams sessions are sent to speakers via Outlook. Simultaneously, a registration page is created in Pimcore, containing a detailed training agenda and an online registration form available in both German and English. Once the form is published, an email invitation with a link to the registration page is created in Inxmail and distributed via a contact list managed in CAS, the CRM system.
