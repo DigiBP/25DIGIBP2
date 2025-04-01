@@ -22,8 +22,8 @@
 
  
 
- # AS-IS Prozess 🚩
-The current training program process at GWP is structured but involves multiple tools and manual steps across various platforms. It starts with internal planning, where training dates are coordinated, and calendar invitations for Microsoft Teams sessions are sent to speakers via Outlook. Simultaneously, a registration page is created in Pimcore, containing a detailed training agenda and an online registration form available in both German and English. Once the form is published, an email invitation with a link to the registration page is created in Inxmail and distributed via a contact list managed in CAS, the CRM system.
+ # AS-IS Process 🚩
+The current training program process at GWP is structured but involves multiple tools and manual steps across various platforms. As such there are quite a few inefficiciencies and opporunity to eliminate manual tasks, copy-pasting activities, and potential human errors. It starts with internal planning, where training dates are coordinated, and calendar invitations for Microsoft Teams sessions are sent to speakers via Outlook. Simultaneously, a registration page is created in Pimcore, containing a detailed training agenda and an online registration form available in both German and English. Once the form is published, an email invitation with a link to the registration page is created in Inxmail and distributed via a contact list managed in CAS, the CRM system.
 
 When participants register through the form, Pimcore automatically sends personalized confirmation emails for each selected session, including Microsoft Teams access links and calendar entries. All registration submissions are also forwarded as notification emails to a shared inbox. The responsible team manually processes these registrations by creating contact entries in CAS, linking them to each selected training, and organizing emails by marking them as processed and moving them to designated folders in Outlook.
 
