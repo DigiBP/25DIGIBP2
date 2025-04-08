@@ -52,7 +52,7 @@ Participants who miss the live session can complete the training via self-study.
 
 ## Process Improvements
 
-- Process "Training sheduling": coordination with the lecturer- Participants – course attendees
+- Process "Training sheduling": coordination with the lecturer
 - Process "Participant Registration"
 - Process "Training delivery"
 - Process "Certification creation"
