@@ -37,8 +37,8 @@ Participants who miss the live session can complete the training via self-study.
 
 ## Involved Roles 🔍
 - GWP – Coordinating entity (Advisor for financial service providers)
-- Participants – course attendees.
-- Lecturer – the course facilitators.
+- Participants – course attendees
+- Lecturer – the course facilitators
 
 ## Identified Challenges in the Current ("As-is") Process 🚧 
 - Manual Work & Media Disruptions: Tasks like "Receive registration mail / Inbox mgmt" or "Export / save Registration list" indicate manual handling, which can be error-prone and time-consuming.
