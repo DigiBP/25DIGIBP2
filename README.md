@@ -50,7 +50,7 @@ Participants who miss the live session can complete the training via self-study.
 
 # To-Be Process
 
-## Business Perspective
+## Process Improvments
 
 # Implementation
 
