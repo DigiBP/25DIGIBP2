@@ -15,7 +15,7 @@
 | Anaïs von Dach | 
 | Micaela Palma Costa | 
 
-# Coaches 🔍
+# Coaches 📌
 - Andreas Martin
 - Charuta Pande
 - Devid Montecchiari
@@ -35,7 +35,16 @@ Participants who miss the live session can complete the training via self-study.
 
 ![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
 
-## Challenge AS-IS Process
+## Involved Roles 🔍
+- GWP – Coordinating entity (Advisor for All Types of Financial Service Providers)
+- Participants – course attendees.
+- Lecturer – the course facilitators.
+
+## Identified Challenges in the Current ("As-is") Process 🚧 
+- Manual Work & Media Disruptions: Tasks like "Receive registration mail / Inbox mgmt" or "Export / save Registration list" indicate manual handling, which can be error-prone and time-consuming.
+- Communication Delays: Multiple handovers between GWP, Lecturers, and Participants may lead to coordination issues, especially when proposing and confirming training dates.
+- Lack of Automation: Steps like "Trigger Inxmail" and "Send confirmation and link" could be automated to improve scalability and reduce administrative overhead.
+- Data Handling Issues: Exporting and saving registration data manually raises risks related to data consistency and compliance with data protection standards.
 
  ## Project Goals :checkered_flag:
 
