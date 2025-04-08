@@ -33,6 +33,8 @@ Certificates of participation are typically prepared the following day. A Word t
 
 Participants who miss the live session can complete the training via self-study. The recorded session is edited to anonymize external attendees and remove breaks, then uploaded to the Share platform. These participants receive an email with links to the video and the presentation, along with a self-study test in PDF format. In order to receive a certificate, the test must be completed and passed. Once the completed test is submitted and meets the required standard, a personalized certificate is issued and sent via email.
 
+![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
+
 ## Challenge AS-IS Process
 
  ## Project Goals :checkered_flag:
