@@ -36,7 +36,7 @@ Participants who miss the live session can complete the training via self-study.
 ![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
 
 ## Involved Roles 🔍
-- GWP – Coordinating entity (Advisor for All Types of Financial Service Providers)
+- GWP – Coordinating entity (Advisor for financial service providers)
 - Participants – course attendees.
 - Lecturer – the course facilitators.
 
