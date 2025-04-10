@@ -58,17 +58,18 @@ Participants who miss the live session can complete the training via self-study.
   3) Grouping of related tasks for better efficiency and visibility.
 - Process "Participant Registration":
   1) Automated creation of the registration page using Budibase, including chatbot support for FAQs in terms of courses.
-  2) Email campaigns managed via Mailchimp, replacing manual handling in Inxmail.
+  2) Email campaigns managed via Mailchimp, for automated mail handling through sheduling.
   3) Automatic CRM checks: if a participant is not registered, the system adds them to the CRM and links them to the training.
 - Process "Training delivery":
   1) Pre-structured and automatically exported registration lists improve preparation and accuracy.
-  2) ?
 - Process "Certification creation":
-  1) Automated sending of certificates, reducing manual document handling.
+  1) Automatic comparison of the MS Teams log data with the registration list to verify attendance.
+  2) Automated sending of certificates, reducing manual document handling.
 - Process "Non-atendees handling":
-  1) Training recording and material automatically sent to non-attendees via  Make.
-  2) Test evaluation automated using decision logic (DMN).
-  3) Certificates only generated and sent for passed participants, all handled automatically.
+  1) Separation of the non-attendee handling into a dedicated, structured process, rather than embedding it within other steps.
+  2) Training recording and material automatically sent to non-attendees via  Make.
+  3) Test evaluation automated using decision logic (DMN).
+  4) Certificates only generated and sent for passed participants, all handled automatically.
 
 
 
