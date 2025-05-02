@@ -1,4 +1,4 @@
-# GWP Training Program: Process Flow from Planning to Certificate Issuance
+# GWP Training Program: Process Flow from Planning to Certificate Creation
 
 
 # Introduction 📥
