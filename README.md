@@ -52,7 +52,7 @@ Participants who miss the live session can complete the training via self-study.
 
 ## Process Improvements
 
-- Process "Training sheduling":
+- Process "Training scheduling":
   1) Use of tools like Forms to streamline date coordination with lecturers.
   2) Elimination of manual back-and-forth communication via email or chat.
   3) Grouping of related tasks for better efficiency and visibility.
@@ -75,6 +75,16 @@ Participants who miss the live session can complete the training via self-study.
 
 
 # Implementation
+
+Process "Training scheduling":
+
+Process "Participant Registration":
+![TO-BE Process "Training scheduling"](Process Participant Registration.png)
+
+Process "Training delivery":
+
+Process "Certification creation":
+
 
 # Outlook
 
