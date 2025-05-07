@@ -76,17 +76,22 @@ Participants who miss the live session can complete the training via self-study.
 
 # Implementation
 
-Process "Training scheduling":
+## Process "Training scheduling":
 
-Process "Participant Registration":
+## Process "Participant Registration":
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
 - Check received answers:
   <img width="1335" alt="image" src="https://github.com/user-attachments/assets/73abdf4a-23ed-4554-92e5-e7b2689ce4d9" />
+- Send confirmation link:
+  <img width="971" alt="image" src="https://github.com/user-attachments/assets/bbadac4b-0dc9-48b5-b164-fc4f3861cc23" />
+- Check if participant is in database and if not register participant
+  <img width="1077" alt="image" src="https://github.com/user-attachments/assets/f14c42b0-e8fe-4dbd-bc0f-00f1364ecfa2" />
 
+  
 
-Process "Training delivery":
+## Process "Training delivery":
 
-Process "Certification creation":
+## Process "Certification creation":
 
 
 # Outlook
