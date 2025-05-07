@@ -77,6 +77,7 @@ Participants who miss the live session can complete the training via self-study.
 # Implementation
 
 ## Process "Training scheduling":
+In progress.
 
 ## Process "Participant Registration":
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
@@ -90,8 +91,10 @@ Participants who miss the live session can complete the training via self-study.
   
 
 ## Process "Training delivery":
+In progress.
 
 ## Process "Certification creation":
+In progress.
 
 
 # Outlook
