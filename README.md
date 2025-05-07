@@ -79,7 +79,8 @@ Participants who miss the live session can complete the training via self-study.
 Process "Training scheduling":
 
 Process "Participant Registration":
-![TO-BE Process "Training scheduling"](Process Participant Registration.png)
+![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
+
 
 Process "Training delivery":
 
