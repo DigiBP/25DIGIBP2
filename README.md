@@ -96,6 +96,16 @@ In progress.
 ## Process "Certification creation":
 In progress.
 
+# Technologies used 
+| Technology | Purpose |
+| ------------- |------------------------------------
+| Camunda 7 | Workflow automation and BPM execution |
+| BPMN 2.0 | Visual language for modeling business processes |
+| DMN | Decisions modelling with business rules |
+| Make | No-code automation for apps and workflows |
+| xxxx | 
+| xxxx |
+
 
 # Outlook
 
