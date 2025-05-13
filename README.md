@@ -91,7 +91,7 @@ In progress.
   
 
 ## Process "Training delivery":
-In progress.
+Out of scope - explain why.
 
 ## Process "Certification creation":
 In progress.
