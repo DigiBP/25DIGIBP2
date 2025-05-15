@@ -95,8 +95,10 @@ Out of scope - explain why.
 
 ## Process "Certification creation":
 
-- Check attendance list from teams with CRM registration list:
+- Check the attendance list from the teams against the CRM registration list:
 <img width="1254" alt="image" src="https://github.com/user-attachments/assets/fb381bc9-ece3-4acd-ad7a-70493bcbb9b4" />
+
+Once the attendance report is manually exported from Microsoft Teams and transferred into a predefined Google Sheet format, this triggers a semi-automated Make scenario. The process compares the attendance entries with the CRM registration list. When a match is found, the CRM sheet is automatically updated by marking the attendee with "Yes" in the attendance column. This step confirms the first condition required for certificate generation. Due to limited user permissions in Microsoft Teams (student role), this step could only be partially automated.
 
 - If attendance is given, send a certificate to the attendee:
 <img width="1237" alt="image" src="https://github.com/user-attachments/assets/ff99c80b-100a-41cb-aa35-54391519770e" />
@@ -111,7 +113,7 @@ Out of scope - explain why.
 | BPMN 2.0 | Visual language for modeling business processes |
 | DMN | Decisions modelling with business rules |
 | Make | No-code automation for apps and workflows |
-| xxxx | 
+| Cursor | 
 | xxxx |
 
 
