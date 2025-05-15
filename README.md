@@ -95,7 +95,7 @@ Out of scope - explain why.
 
 ## Process "Certification creation":
 
-Check attendance list from teams with CRM registration list:
+- Check attendance list from teams with CRM registration list:
 <img width="1254" alt="image" src="https://github.com/user-attachments/assets/fb381bc9-ece3-4acd-ad7a-70493bcbb9b4" />
 
 - If attendance is given, send a certificate to the attendee:
