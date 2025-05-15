@@ -103,8 +103,12 @@ Once the attendance report is manually exported from Microsoft Teams and transfe
 - If attendance is given, send a certificate to the attendee:
 <img width="1237" alt="image" src="https://github.com/user-attachments/assets/ff99c80b-100a-41cb-aa35-54391519770e" />
 
+This process is triggered by a custom webhook and initiates the automated generation and delivery of certificates. The Google Sheets module searches for participants whose attendance has already been confirmed with a "Yes" in the CRM registration sheet — a status that was established in the previous step by matching the Microsoft Teams attendance report with the registration list. Once a matching participant is found, the PDF Generator API creates a personalized certificate. The certificate is then automatically sent to the participant via Gmail. This ensures that only those who actually attended the session receive a certificate, making the process accurate and efficient.
+
 - If attendance is not given, send an email to the non-attendee:
 <img width="1322" alt="image" src="https://github.com/user-attachments/assets/45a01a8e-01bc-44a7-acb9-95d6d61bdbb6" />
+
+This process is triggered by a custom webhook and handles participants whose attendance could not be confirmed. It searches the CRM registration sheet for entries where the attendance field is empty or not marked with “Yes”. For each non-attendee, an automated email is sent via Gmail. The message informs them that their attendance could not be verified, and kindly asks them to contact the GWP team. 
 
 # Technologies used 
 | Technology | Purpose |
