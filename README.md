@@ -94,7 +94,10 @@ In progress.
 Out of scope - explain why.
 
 ## Process "Certification creation":
-In progress.
+
+
+![Uploading image.png…]()
+
 
 # Technologies used 
 | Technology | Purpose |
