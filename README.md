@@ -95,9 +95,14 @@ Out of scope - explain why.
 
 ## Process "Certification creation":
 
+Check attendance list from teams with CRM registration list:
+<img width="1254" alt="image" src="https://github.com/user-attachments/assets/fb381bc9-ece3-4acd-ad7a-70493bcbb9b4" />
 
-![Uploading image.png…]()
+- If attendance is given, send a certificate to the attendee:
+<img width="1237" alt="image" src="https://github.com/user-attachments/assets/ff99c80b-100a-41cb-aa35-54391519770e" />
 
+- If attendance is not given, send an email to the non-attendee:
+<img width="1322" alt="image" src="https://github.com/user-attachments/assets/45a01a8e-01bc-44a7-acb9-95d6d61bdbb6" />
 
 # Technologies used 
 | Technology | Purpose |
