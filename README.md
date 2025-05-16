@@ -82,13 +82,17 @@ In progress.
 ## Process "Participant Registration":
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
 - Check received answers:
-Once a registration has been successfully completed, the corresponding entry in the Google Sheet is automatically updated. In the column "Registration Successful", the value "Yes"    is added.The trigger for this process is a defined date that indicates when registrations are open. From this point on, incoming registrations are processed and the data is cross-    checked with the existing Google Sheet. This ensures that only fully and correctly registered participants are taken into account.
+- Once a registration has been successfully completed, the corresponding entry in the Google Sheet is automatically updated. In the column "Registration Successful", the value "Yes"    is added.The trigger for this process is a defined date that indicates when registrations are open. From this point on, incoming registrations are processed and the data is cross-    checked with the existing Google Sheet. This ensures that only fully and correctly registered participants are taken into account.
   <img width="1335" alt="image" src="https://github.com/user-attachments/assets/73abdf4a-23ed-4554-92e5-e7b2689ce4d9" />
   
   <img width="1412" alt="image" src="https://github.com/user-attachments/assets/62820053-0c8d-4d68-bdfa-a9326b3878f7" />
 
 - Send confirmation link:
+- As soon as a registration is successfully completed, participants automatically receive a confirmation email. This email serves as a thank you for the successful registration and includes the link to the corresponding Microsoft Teams meeting. The email is sent automatically, ensuring that all registered participants promptly receive the necessary information for their participation.
   <img width="971" alt="image" src="https://github.com/user-attachments/assets/bbadac4b-0dc9-48b5-b164-fc4f3861cc23" />
+  
+<img width="493" alt="image" src="https://github.com/user-attachments/assets/3591bf47-0107-4ed6-857a-82684791b55a" />
+
 - Check if participant is in database and if not register participant
   <img width="1077" alt="image" src="https://github.com/user-attachments/assets/f14c42b0-e8fe-4dbd-bc0f-00f1364ecfa2" />
 
