@@ -93,10 +93,17 @@ Once a registration has been successfully completed, the corresponding entry in 
 As soon as a registration is successfully completed, participants automatically receive a confirmation email. This email serves as a thank you for the successful registration and includes the link to the corresponding Microsoft Teams meeting. The email is sent automatically, ensuring that all registered participants promptly receive the necessary information for their participation.
   <img width="971" alt="image" src="https://github.com/user-attachments/assets/bbadac4b-0dc9-48b5-b164-fc4f3861cc23" />
   
-<img width="493" alt="image" src="https://github.com/user-attachments/assets/3591bf47-0107-4ed6-857a-82684791b55a" />
+<img width="644" alt="image" src="https://github.com/user-attachments/assets/0642c5c2-12e7-4594-a306-786990727e28" />
+
 
 - Check if participant is in database and if not register participant
+
+In the final step, the system checks whether the registered person already exists in the database. If the person is not found, a new Customer ID is generated, and the essential data, such as the name and email address, is added to the database.
+
   <img width="1077" alt="image" src="https://github.com/user-attachments/assets/f14c42b0-e8fe-4dbd-bc0f-00f1364ecfa2" />
+
+  <img width="1214" alt="image" src="https://github.com/user-attachments/assets/be690853-76ae-4dba-8534-8f5bde40e6e9" />
+
 
   
 
