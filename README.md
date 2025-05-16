@@ -57,9 +57,9 @@ Participants who miss the live session can complete the training via self-study.
   2) Elimination of manual back-and-forth communication via email or chat.
   3) Grouping of related tasks for better efficiency and visibility.
 - Process "Participant Registration":
-  1) Automated creation of the registration page using Budibase, including chatbot support for FAQs in terms of courses.
-  2) Email campaigns managed via Mailchimp, for automated mail handling through sheduling.
-  3) Automatic CRM checks: if a participant is not registered, the system adds them to the CRM and links them to the training.
+  1) After successful registration, the system updates the Google Sheet and ensures only valid entries are considered during the registration period.
+  2) Registered participants automatically receive a confirmation email with the Teams link.
+  3) Automatic CRM checks: if a participant is not registered, the system adds them to the CRM.
 - Process "Training delivery":
   1) Pre-structured and automatically exported registration lists improve preparation and accuracy.
 - Process "Certification creation":
