@@ -129,6 +129,8 @@ This process is triggered by a custom webhook and initiates the automated genera
 
 This process is triggered by a custom webhook and handles participants whose attendance could not be confirmed. It searches the CRM registration sheet for entries where the attendance field is empty or not marked with “Yes”. For each non-attendee, an automated email is sent via Gmail. The message informs them that their attendance could not be verified, and kindly asks them to contact the GWP team. 
 
+<img width="1177" alt="image" src="https://github.com/user-attachments/assets/cf46da90-deac-48fc-a2d2-c274549cfcbb" />
+
 # Technologies used 
 | Technology | Purpose |
 | ------------- |------------------------------------
