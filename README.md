@@ -114,9 +114,9 @@ Out of scope - explain why.
 
 ## Process "Certification creation":
 
-### Check the attendance list from the teams against the CRM registration list:
-
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/09a86e8a-5623-429b-b1c9-60f9169ab139" />
+
+### Check the attendance list from the teams against the CRM registration list:
 
 <img width="1254" alt="image" src="https://github.com/user-attachments/assets/fb381bc9-ece3-4acd-ad7a-70493bcbb9b4" />
 
