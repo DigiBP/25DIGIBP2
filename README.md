@@ -100,6 +100,9 @@ The next user task is selecting the training topic. In this scenario, GWP offers
 
 In a more sophisticated setup with a larger pool of lecturers covering diverse fields, this selection could also be leveraged to target those with specific expertise.
 
+### Send link to lecturers
+
+
 
 
 ## Process "Participant Registration":
