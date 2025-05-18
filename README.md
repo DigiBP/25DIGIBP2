@@ -93,6 +93,13 @@ Since this task is implemented as a user task, the GWP coordinator will be promp
 
 <img width="761" alt="Bildschirmfoto 2025-05-18 um 12 54 15" src="https://github.com/user-attachments/assets/05b356aa-837b-4663-8679-0f8c4acffa0f" />
 
+### Choose training topic
+The next user task is selecting the training topic. In this scenario, GWP offers three different types of training to its customers. The GWP coordinator can choose one of these three topics, and that choice will be used in the next step to match the selection with the corresponding Calendly event types. So the Coordinator picks the training that should be performed next:
+
+<img width="885" alt="Bildschirmfoto 2025-05-18 um 13 17 52" src="https://github.com/user-attachments/assets/fefe7414-2c94-4a32-8249-8bb08ed01125" />
+
+In a more sophisticated setup with a larger pool of lecturers covering diverse fields, this selection could also be leveraged to target those with specific expertise.
+
 
 
 ## Process "Participant Registration":
