@@ -77,7 +77,23 @@ Participants who miss the live session can complete the training via self-study.
 # Implementation
 
 ## Process "Training scheduling":
-In progress.
+
+<img width="975" alt="Bildschirmfoto 2025-05-18 um 12 27 36" src="https://github.com/user-attachments/assets/d65b3f20-d0be-4b4e-95bd-e772b466aca2" />
+
+### Start-Event
+The trainer scheduling process can be initiated either manually or at a predetermined interval (e.g. every 3 months). Starting the process based on a time-triggered event could be useful for continuously checking the availability of trainers and offering respective trainings.
+
+### Update Calendly Event Types
+The first step for the coordinator at GWP is to update the Calendly Event Types. Calendly is an external tool that facilitates scheduling meetings between groups. In this case, we use Calendly to allow trainers to provide their availability. Each training offered has its own separate Event Type:
+
+<img width="1060" alt="Bildschirmfoto 2025-05-18 um 12 45 31" src="https://github.com/user-attachments/assets/840824dd-1efe-4981-83d1-692bc15880bc" />
+
+Before sending out the Calendly links, the GWP coordinator must ensure that the Event Types are up to date and include all relevant information. Additionally, the coordinator can block specific time slots when the training facility is unavailable or when a training session should not be scheduled on a particular date or time.
+Since this task is implemented as a user task, the GWP coordinator will be prompted to confirm that all Calendly Event Types have indeed been updated:
+
+<img width="761" alt="Bildschirmfoto 2025-05-18 um 12 54 15" src="https://github.com/user-attachments/assets/05b356aa-837b-4663-8679-0f8c4acffa0f" />
+
+
 
 ## Process "Participant Registration":
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
