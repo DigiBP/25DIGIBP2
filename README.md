@@ -63,7 +63,7 @@ A Teams login report is also saved on the shared drive for documentation.
 
 The following day, certificates are generated using a Word mail merge from the final attendance list. Each certificate is saved as a PDF, split per participant, and emailed—typically grouped by company—along with presentation slides.
 
-## 7. Self-Study Process
+## 7. Self-Study for no-shows
 
 Participants who missed the live session can complete the training asynchronously. The Teams recording is edited (to anonymize attendees and remove breaks), then uploaded to Share. These participants receive:
 
@@ -74,7 +74,7 @@ Upon passing the test, a personalized certificate is issued and sent via email.
 
 ## 📌 BPMN Diagram – AS-IS Training Process at GWP
 ![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
-The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages.
+> The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages.
 
 ## Involved Roles 🔍
 - GWP – Coordinating entity (Advisor for financial service providers)
