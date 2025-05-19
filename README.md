@@ -150,6 +150,9 @@ Out of scope - explain why.
 
 Once the attendance report is manually exported from Microsoft Teams and transferred into a predefined Google Sheet format, this triggers a semi-automated Make scenario. The process compares the attendance entries with the CRM registration list. When a match is found, the CRM sheet is automatically updated by marking the attendee with "Yes" in the attendance column. This step confirms the first condition required for certificate generation. Due to limited user permissions in Microsoft Teams (student role), this step could only be partially automated.
 
+<img width="1170" alt="image" src="https://github.com/user-attachments/assets/d8186c8a-7ad1-4d0f-955e-aebece7dccb0" />
+
+
 ### If attendance is given, send a certificate to the attendee:
 <img width="1237" alt="image" src="https://github.com/user-attachments/assets/ff99c80b-100a-41cb-aa35-54391519770e" />
 
