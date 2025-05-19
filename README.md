@@ -25,17 +25,56 @@ Until now, GWP’s training efforts have centered primarily on content delivery 
  
 
  # AS-IS Process 🚩
-The current training program process at GWP is structured but involves multiple tools and manual steps across various platforms. As such there are quite a few inefficiciencies and opporunity to eliminate manual tasks, copy-pasting activities, and potential human errors. It starts with internal planning, where training dates are coordinated, and calendar invitations for Microsoft Teams sessions are sent to speakers via Outlook. Simultaneously, a registration page is created in Pimcore, containing a detailed training agenda and an online registration form available in both German and English. Once the form is published, an email invitation with a link to the registration page is created in Inxmail and distributed via a contact list managed in CAS, the CRM system.
+The current training process at GWP is structured but involves multiple tools, isolated data repositories, and manual interventions. It suffers from inefficiencies related to repetitive tasks, copy-pasting between platforms, and the risk of human error due to limited automation.
 
-When participants register through the form, Pimcore automatically sends personalized confirmation emails for each selected session, including Microsoft Teams access links and calendar entries. All registration submissions are also forwarded as notification emails to a shared inbox. The responsible team manually processes these registrations by creating contact entries in CAS, linking them to each selected training, and organizing emails by marking them as processed and moving them to designated folders in Outlook.
+## 1. Training Planning and Coordination
 
-The day before each training, the final registration list is exported from CAS as an Excel file and saved on the shared network drive. An email notification with a link to the list is sent to the speakers. On the day of the training, the session is conducted and recorded via Microsoft Teams. Attendance is tracked during the session by updating the registration list: present participants are marked, additional attendees are added, and no-shows are noted. After the training, a Teams log of logged-in users is saved as an Excel file on the network drive for documentation purposes.
+The process begins with internal planning to determine training dates. Invitations for Microsoft Teams sessions are manually sent via Outlook. This coordination often involves several rounds of back-and-forth, as not all proposed dates suit both GWP coordinators and instructors.
 
-Certificates of participation are typically prepared the following day. A Word template is filled via mail merge using the final attendance list, saved as a PDF, and split into individual files named per participant. These certificates, along with the presentation slides, are then emailed—usually grouped by company—to the attendees.
+## 2. Registration Page and Promotion (Runs in Parallel with Step 1)
 
-Participants who miss the live session can complete the training via self-study. The recorded session is edited to anonymize external attendees and remove breaks, then uploaded to the Share platform. These participants receive an email with links to the video and the presentation, along with a self-study test in PDF format. In order to receive a certificate, the test must be completed and passed. Once the completed test is submitted and meets the required standard, a personalized certificate is issued and sent via email.
+While training dates are still being coordinated, the marketing team begins preparing the registration page in Pimcore. This includes adding the detailed agenda and building the online registration form (available in both German and English).
 
+However, because final training dates are often not confirmed promptly (as noted in Step 1), the publication of the registration page is frequently delayed. Once dates are finalized, a promotional email is created in Inxmail with a link to the registration page. The email is then sent to relevant contacts managed in CAS, GWP’s CRM system.
+
+## 3. Participant Registration and Confirmation
+
+Participants register via the form, triggering Pimcore to send personalized confirmation emails with Teams links and calendar entries. Each registration also sends a notification to a shared inbox. The team manually:
+
+- Creates contact entries in CAS,
+- Links them to specific trainings, and
+- Sorts emails in Outlook to mark them as processed.
+
+## 4. Pre-Training Preparation
+
+The day before the training, the final participant list is exported from CAS to Excel and saved on the shared network drive. A link to the list is emailed to the instructor.
+
+## 5. Training Delivery and Attendance Tracking
+
+On the day of training, the session is held and recorded via Microsoft Teams. Attendance is tracked in the Excel file:
+
+- Present participants are marked,
+- Extra attendees are added,
+- No-shows are noted.
+
+A Teams login report is also saved on the shared drive for documentation.
+
+## 6. Certificate Creation and Follow-Up
+
+The following day, certificates are generated using a Word mail merge from the final attendance list. Each certificate is saved as a PDF, split per participant, and emailed—typically grouped by company—along with presentation slides.
+
+## 7. Self-Study Process
+
+Participants who missed the live session can complete the training asynchronously. The Teams recording is edited (to anonymize attendees and remove breaks), then uploaded to Share. These participants receive:
+
+- A link to the video and slides,
+- A self-study test (PDF).
+
+Upon passing the test, a personalized certificate is issued and sent via email.
+
+## 📌 BPMN Diagram – AS-IS Training Process at GWP
 ![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
+The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages.
 
 ## Involved Roles 🔍
 - GWP – Coordinating entity (Advisor for financial service providers)
