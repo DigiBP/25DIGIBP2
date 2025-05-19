@@ -2,9 +2,11 @@
 
 
 # Introduction 📥
+GWP is a Swiss-based consultancy specializing in governance, risk, and compliance (GRC), with a strong focus on financial services and regulatory requirements. With a team of seasoned professionals, GWP supports banks, insurers, and other institutions in navigating the complex landscape of financial regulation, internal control systems, and risk management. The firm is known for its pragmatic approach, combining deep regulatory expertise with operational implementation support to help clients achieve sustainable compliance and operational excellence.
 
+GWP offers specialized training programs designed to equip customers with practical knowledge in key regulatory and compliance domains. Delivered by experienced practitioners, the courses are tailored to the needs of financial institutions and are available both in-house and as open seminars. The training offer is designed to complement GWP’s consulting services by building internal capabilities and fostering a culture of compliance within client organizations.
 
-
+Until now, GWP’s training efforts have centered primarily on content delivery and business development, successfully expanding their offering and client base. As the training business has grown, it has become increasingly clear that opportunities for efficiency gains through digitalization exist. In particular, the scheduling-to-delivery process has emerged as a key area for optimization. This initiative therefore focuses on digitizing and streamlining the training process—from initial scheduling to final delivery—in order to enhance operational scalability and improve the participant experience.
 
 # Team Members 👥
 | Name |
