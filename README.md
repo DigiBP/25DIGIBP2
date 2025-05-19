@@ -82,10 +82,28 @@ Upon passing the test, a personalized certificate is issued and sent via email.
 - Lecturer – the course facilitators
 
 ## Identified Challenges in the Current ("As-is") Process 🚧 
-- Manual Work & Media Disruptions: Tasks like "Receive registration mail / Inbox mgmt" or "Export / save Registration list" indicate manual handling, which can be error-prone and time-consuming.
-- Communication Delays: Multiple handovers between GWP, Lecturers, and Participants may lead to coordination issues, especially when proposing and confirming training dates.
-- Lack of Automation: Steps like "Trigger Inxmail" and "Send confirmation and link" could be automated to improve scalability and reduce administrative overhead.
-- Data Handling Issues: Exporting and saving registration data manually raises risks related to data consistency and compliance with data protection standards.
+The current training process at GWP, while structured, presents several challenges that limit efficiency, scalability, and consistency. The following issues have been identified:
+
+- **Manual Work & Media Disruptions**  
+  Many process steps rely on manual handling and switching between tools. Tasks such as managing incoming registration emails or exporting and saving participant lists are time-consuming and error-prone. These media disruptions increase the likelihood of mistakes and slow down execution.
+
+- **Communication Delays**  
+  Coordination between GWP, lecturers, and participants—particularly around setting and confirming training dates—often involves several rounds of back-and-forth communication. This leads to delays in publishing registration materials and complicates scheduling.
+
+- **Lack of Automation**  
+  Several actions that could be automated—such as sending confirmation emails or launching promotional campaigns—still require manual intervention. This not only increases the administrative workload but also reduces responsiveness and scalability as training volumes grow.
+
+- **Data Handling Issues**  
+  Manually exporting and storing registration data introduces risks related to data consistency, accuracy, and compliance with data protection regulations. The lack of standardized, automated data flows increases vulnerability to errors and potential breaches.
+
+- **Process Transparency & Monitoring Gaps**  
+  There is limited visibility into the real-time status of the training process. Without centralized tracking, it's difficult to monitor progress, identify bottlenecks, or report reliably on process performance.
+
+- **Tool Fragmentation & Siloed Systems**  
+  The use of disconnected tools such as Pimcore, Outlook, Inxmail, CAS, Excel, and Share creates fragmented workflows. Data does not flow seamlessly between systems, leading to duplication of effort and increased reliance on manual coordination.
+
+- **Limited Reusability & Standardization**  
+  Key process elements—like email templates, registration forms, and certificate generation—lack standardization. Each new training setup often requires recreating similar components from scratch, resulting in inefficiencies and inconsistent participant experiences.
 
  ## Project Goals :checkered_flag:
 
