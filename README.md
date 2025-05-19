@@ -219,6 +219,7 @@ This process is triggered by a custom webhook and initiates the automated genera
 
 <img width="1344" alt="image" src="https://github.com/user-attachments/assets/48f7388e-5879-424d-a3f0-d39af12aa808" />
 
+<img width="573" alt="image" src="https://github.com/user-attachments/assets/2b05cb18-5a54-438e-b3fa-0a84f3346f99" />
 
 ### If attendance is not given, send an email to the non-attendee:
 <img width="1322" alt="image" src="https://github.com/user-attachments/assets/45a01a8e-01bc-44a7-acb9-95d6d61bdbb6" />
