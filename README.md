@@ -124,7 +124,7 @@ The primary goal of this project is to improve the efficiency, scalability, and 
 - Participants – course attendees
 - Lecturer – the course facilitators
 
-## Identified Challenges in the Current ("As-is") Process 🚧 
+## Identified Challenges in the AS-IS Process 🚧 
 The current training process at GWP, while structured, presents several challenges that limit efficiency, scalability, and consistency. The following issues have been identified:
 
 - **Manual Work & Media Disruptions**  
