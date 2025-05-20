@@ -1,3 +1,34 @@
+## Inhaltsverzeichnis
+
+- [Introduction 📥](#introduction-)
+- [Team Members 👥](#team-members-)
+- [Coaches 📌](#coaches-)
+- [AS-IS Process 🚩](#as-is-process-)
+  - [1. Training Planning and Coordination](#1-training-planning-and-coordination)
+  - [2. Registration Page and Promotion](#2-registration-page-and-promotion-runs-in-parallel-with-step-1)
+  - [3. Participant Registration and Confirmation](#3-participant-registration-and-confirmation)
+  - [4. Pre-Training Preparation](#4-pre-training-preparation)
+  - [5. Training Delivery and Attendance Tracking](#5-training-delivery-and-attendance-tracking)
+  - [6. Certificate Creation and Follow-Up](#6-certificate-creation-and-follow-up)
+  - [7. Self-Study for no-shows](#7-self-study-for-no-shows)
+- [BPMN Diagram – AS-IS Training Process at GWP](#bpmn-diagram--as-is-training-process-at-gwp)
+- [Involved Roles 🔍](#involved-roles-)
+- [Identified Challenges 🚧](#identified-challenges-in-the-current-as-is-process-)
+- [Project Goals 🏁](#project-goals-)
+- [TO-BE Process](#to-be-process)
+  - [Process Improvements](#process-improvements)
+    - [Training scheduling](#process-training-scheduling)
+    - [Participant Registration](#process-participant-registration)
+    - [Training delivery](#process-training-delivery)
+    - [Certification creation](#process-certification-creation)
+    - [Non-attendees handling](#process-non-atendees-handling)
+  - [Implementation](#implementation)
+    - [Trainer Scheduling via Calendly](#process-training-scheduling)
+    - [Participant Registration Flow](#process-participant-registration)
+    - [Attendance & Certificate Automation](#process-training-completion-processing)
+- [Technologies used](#technologies-used)
+
+
 # GWP Training Program: Process Flow from Planning to Certificate Creation
 
 
