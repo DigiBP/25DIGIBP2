@@ -182,17 +182,21 @@ The training scheduling process can be initiated either manually or at a defined
 ---
 
 ### User Task: Update Calendly Event Types
-The process begins with the GWP coordinator updating Calendly Event Types. Calendly is used to collect availability from lecturers, with each training topic assigned to a specific event type.  
+The process begins with the GWP coordinator updating Calendly Event Types. Calendly is used to collect availability from lecturers, with each training topic assigned to a specific event type.
+![image](https://github.com/user-attachments/assets/afa8d6a7-6686-447f-912f-13d9ba754263)
+
 Before proceeding, the coordinator ensures:
 - All relevant training sessions are listed,
 - Availability restrictions (e.g., holidays, blocked times) are respected.
 
 As this is a user task, Camunda prompts the coordinator to confirm that all event types are up to date before continuing.
+![image](https://github.com/user-attachments/assets/28cd95a2-64d5-4bd9-8f5c-8d1ea67d02da)
 
 ---
 
 ### User Task: Choose Training Topic
 The coordinator selects one of three available training topics offered by GWP. This selection is passed as a process variable and will determine which event types and lecturers are targeted in the following step.
+![image](https://github.com/user-attachments/assets/057497c3-040d-4492-8bb0-c66e53ede8d0)
 
 ---
 
