@@ -220,7 +220,7 @@ In the final step, the system checks whether the registered person already exist
 ## Process "Training delivery":
 Out of scope - explain why.
 
-## Process "Certification creation":
+## Process "Training Completion Processing":
 
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/09a86e8a-5623-429b-b1c9-60f9169ab139" />
 
