@@ -212,6 +212,7 @@ This step is executed via Make.com, triggered by a Camunda webhook. It performs 
 5. **Filter "SelectEventType":** Matches the topic to the correct event type.
 6. **Calendly – Create Single-Use Link:** Generates a unique booking URL per lecturer.
 7. **Gmail – Send Email:** Delivers personalized emails to each lecturer.
+![Instructor email availability sample](https://github.com/user-attachments/assets/f21c5f30-2e7d-4740-976a-7fdc9e4c56dd)
 8. **Webhook Response:** Sends an “OK” back to Camunda.
 
 ---
@@ -223,8 +224,7 @@ This timer event introduces a 7-day pause, giving lecturers time to respond. It'
 
 ### Service Task: Check Received Answers
 This scenario continuously runs in Make.com, monitoring for incoming bookings and logging responses in a CRM Google Sheet:
-
-![Make Scenario – Monitor Answers](https://github.com/user-attachments/assets/f21c5f30-2e7d-4740-976a-7fdc9e4c56dd)
+![Make Scenario – Monitor Answers]<img width="848" alt="image" src="https://github.com/user-attachments/assets/557d80d4-7869-441a-9fc4-243b68dc5d24" />
 
 1. **Calendly – Watch Events / List Event Invitees**
 2. **Google Sheets – Add a Row:** New responses are added to the CRM with a `"Processed"` column set to `"No"`.
@@ -237,7 +237,7 @@ This setup ensures responses are continuously captured and marked for further pr
 ### Service Task: Evaluate Lecturer Responses
 After 7 days, Camunda triggers this Make scenario to assess whether any new responses exist:
 
-![Make Scenario – Evaluate Responses](https://github.com/user-attachments/assets/ce912155-278c-4023-98b4-6f68ee59a0f4.png)
+![Make Scenario – Evaluate Responses](<img width="836" alt="image" src="https://github.com/user-attachments/assets/fc41b8cb-ebb6-4870-90ed-7c004d6b2d3b" />)
 
 1. **Webhook Trigger:** Starts when Camunda proceeds past the timer event.
 2. **Google Sheets – Search Rows:** Filters entries with `"Processed" = No"`.
@@ -259,6 +259,7 @@ Implemented natively in Camunda, this decision gate ensures the process only pro
 
 ### Service Task: Decide on Lecturer
 This service task is implemented via Make.com and is responsible for selecting the best available lecturer based on participant ratings and availability.
+![Make Scenario – Decide on lecturer](https://github.com/user-attachments/assets/ba40e144-41bc-4bbe-876f-f24b0d100af9")
 
 **Process Logic:**
 
