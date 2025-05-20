@@ -9,7 +9,7 @@
   - [3. Participant Registration and Confirmation](#3-participant-registration-and-confirmation)
   - [4. Pre-Training Preparation](#4-pre-training-preparation)
   - [5. Training Delivery and Attendance Tracking](#5-training-delivery-and-attendance-tracking)
-  - [6. Certificate Creation and Follow-Up](#6-certificate-creation-and-follow-up)
+  - [6. Training Completion Processing](#6-certificate-creation-and-follow-up)
   - [7. Self-Study for no-shows](#7-self-study-for-no-shows)
 - [BPMN Diagram – AS-IS Training Process at GWP](#bpmn-diagram--as-is-training-process-at-gwp)
 - [Involved Roles 🔍](#involved-roles-)
@@ -90,7 +90,7 @@ On the day of training, the session is held and recorded via Microsoft Teams. At
 
 A Teams login report is also saved on the shared drive for documentation.
 
-## 6. Certificate Creation and Follow-Up
+## 6. Training Completion Processing 
 
 The following day, certificates are generated using a Word mail merge from the final attendance list. Each certificate is saved as a PDF, split per participant, and emailed—typically grouped by company—along with presentation slides.
 
