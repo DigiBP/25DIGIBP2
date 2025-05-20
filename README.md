@@ -179,6 +179,9 @@ The chosen topic is passed to Make in a process variable.
 
 **Gmail - Send an Email** Dispatches a predefined message to the trainer, containing the relevant training details and the individualized scheduling link.
 
+<img width="850" alt="image" src="https://github.com/user-attachments/assets/809341ca-e52d-46f3-a0a3-3b422843f4bb" />
+
+
 **Webhook Response**: Sends an “OK” back to Camunda so the BPMN process can continue.
 
 
