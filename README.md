@@ -18,9 +18,9 @@
 - [TO-BE Process](#to-be-process)
   - [Process Improvements](#process-improvements)
   - [Implementation](#implementation)
-    - [Trainer Scheduling via Calendly](#process-training-scheduling)
-    - [Participant Registration Flow](#process-participant-registration)
-    - [Attendance & Certificate Automation](#process-training-completion-processing)
+    - [1. Process "Training scheduling"](#process-training-scheduling)
+    - [2. Process "Participant Registration"](#process-participant-registration)
+    - [3. Process "Training Completion Processing"](#process-training-completion-processing)
 - [Technologies used](#technologies-used)
 
 
@@ -247,12 +247,6 @@ In the final step, the system checks whether the registered person already exist
 <img width="1077" alt="image" src="https://github.com/user-attachments/assets/f14c42b0-e8fe-4dbd-bc0f-00f1364ecfa2" />
 
 <img width="1214" alt="image" src="https://github.com/user-attachments/assets/be690853-76ae-4dba-8534-8f5bde40e6e9" />
-
-
-  
-
-## Process "Training delivery":
-Out of scope - explain why.
 
 ## Process "Training Completion Processing":
 
