@@ -164,20 +164,22 @@ This service task is implemented via Rest API call to the integration platform m
 
 <img width="1072" alt="Bildschirmfoto 2025-05-20 um 13 22 39" src="https://github.com/user-attachments/assets/e6608544-1625-494c-9b72-bfccc943053a" />
 
-Custom Webhook: Camunda triggers this webhook once the GWP coordinator has chosen the training. The selected trainingtopic is submitted in a variable.
+**Custom Webhook**: Camunda triggers this webhook as soon as the GWP coordinator selects a training topic.
+The chosen topic is passed to Make in a process variable.
 
-Google Sheets - Search Rows: Searches the registered trainers in the CRM Database containing names, addresses and email addresses.
+**Google Sheets - Search Rows**: Looks up the registered trainers in the CRM database, returning their names, addresses, and email addresses.
 
-Iterator - Splits the array of found trainers so that the flow can work for one trainer at a time.
+**Iterator**: Breaks the trainer array into individual items so the scenario can handle one trainer at a time.
 
-Calendly - List Event Types - Pulls the complete list of event types from the calendly account.
+**Calendly - List Event Types**: Retrieves the complete list of event types from the Calendly account.
 
-Filter "SelectEventType" - Compares the pulled events from calendly against the input from the GWP coordinator. this ensures that the scheduling link is created for the right training session.
+**Filter "SelectEventType"**: Compares the event types pulled from Calendly with the topic supplied by the coordinator, ensuring the scheduling link is created for the correct training session.
 
-Calendly - Create a singl-use scheduling link - Generates a unique one-time booking URL for the specific event type / trainer combination.
+**Calendly - Create a singl-use scheduling link**: Generates a unique, one-time booking URL for the specific event-type/trainer combination.
 
-Gmail - Send an Email -  
+**Gmail - Send an Email** Dispatches a predefined message to the trainer, containing the relevant training details and the individualized scheduling link.
 
+**Webhook Response**: Sends an “OK” back to Camunda so the BPMN process can continue.
 
 
 ## Process "Participant Registration":
