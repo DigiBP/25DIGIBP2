@@ -108,8 +108,6 @@ The current training process at GWP, while structured, presents several challeng
  ## Project Goals :checkered_flag:
 
 # To-Be Process
-
-# To-Be Process
 - **Scope and focus** PLACEHOLDER --> Clearly outline areas where we focused and how they positivly impact the identified process challenges
 
 ## Process Improvements
