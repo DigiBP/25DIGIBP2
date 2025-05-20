@@ -288,10 +288,9 @@ This process is triggered by a custom webhook and handles participants whose att
 | ------------- |------------------------------------
 | Camunda 7 | Workflow automation and BPM execution |
 | BPMN 2.0 | Visual language for modeling business processes |
-| DMN | Decisions modelling with business rules |
 | Make | No-code automation for apps and workflows |
 | Cursor | 
-| xxxx |
+| Google Sheets |
 
 
 # Outlook
