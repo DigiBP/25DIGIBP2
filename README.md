@@ -1,4 +1,4 @@
-## Inhaltsverzeichnis
+## Table of Contents
 
 - [Introduction 📥](#introduction-)
 - [Team Members 👥](#team-members-)
