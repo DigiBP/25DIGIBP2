@@ -259,7 +259,8 @@ Implemented natively in Camunda, this decision gate ensures the process only pro
 
 ### Service Task: Decide on Lecturer
 This service task is implemented via Make.com and is responsible for selecting the best available lecturer based on participant ratings and availability.
-![Make Scenario – Decide on lecturer](https://github.com/user-attachments/assets/ba40e144-41bc-4bbe-876f-f24b0d100af9")
+<img width="827" alt="image" src="https://github.com/user-attachments/assets/48b142e3-011a-4445-bd3c-e84f93236372" />
+
 
 **Process Logic:**
 
@@ -277,6 +278,9 @@ This service task is implemented via Make.com and is responsible for selecting t
 7. **Google Sheets – Update Processed Flags:**  
    All entries used in the selection process are updated to `"Processed" = Yes"` to avoid reprocessing in future executions.
 
+## PLACEHOLDER - STILL MISSING TO BE CONTINUED JC
+
+<img width="266" alt="image" src="https://github.com/user-attachments/assets/f08c6d05-b225-4e51-a845-90a623868e1a" />
 
 
 ## Process "Participant Registration":
