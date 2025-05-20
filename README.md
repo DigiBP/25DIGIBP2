@@ -111,6 +111,14 @@ This process step will not be further elaborated in the project work due to time
 
 # Project Goals :checkered_flag:
 
+The primary goal of this project is to improve the efficiency, scalability, and transparency of GWP’s training program by digitizing and partially automating the end-to-end process—from planning to certificate issuance. Based on the challenges identified in the current (as-is) process, the project focuses on the following objectives:
+ 
+- Enhance Operational Efficiency
+- Increase Process Automation
+- Improve Data Consistency and Compliance
+- Strengthen Participant Experience
+- Increase Transparency and Monitoring
+ 
 ## Involved Roles 🔍
 - GWP – Coordinating entity (Advisor for financial service providers)
 - Participants – course attendees
