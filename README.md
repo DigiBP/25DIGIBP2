@@ -11,10 +11,10 @@
   - [5. Training Delivery and Attendance Tracking](#5-training-delivery-and-attendance-tracking)
   - [6. Training Completion Processing](#6-certificate-creation-and-follow-up)
   - [7. Self-Study for no-shows](#7-self-study-for-no-shows)
-- [BPMN Diagram – AS-IS Training Process at GWP](#bpmn-diagram--as-is-training-process-at-gwp)
-- [Involved Roles 🔍](#involved-roles-)
-- [Identified Challenges 🚧](#identified-challenges-in-the-current-as-is-process-)
+  - [BPMN Diagram – AS-IS Training Process at GWP](#bpmn-diagram--as-is-training-process-at-gwp)
 - [Project Goals 🏁](#project-goals-)
+  - [Involved Roles 🔍](#involved-roles-)
+  - [Identified Challenges 🚧](#identified-challenges-in-the-current-as-is-process-)
 - [TO-BE Process](#to-be-process)
   - [Process Improvements](#process-improvements)
     - [Training scheduling](#process-training-scheduling)
@@ -109,6 +109,8 @@ This process step will not be further elaborated in the project work due to time
 ![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
 > The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages.
 
+# Project Goals :checkered_flag:
+
 ## Involved Roles 🔍
 - GWP – Coordinating entity (Advisor for financial service providers)
 - Participants – course attendees
@@ -137,8 +139,6 @@ The current training process at GWP, while structured, presents several challeng
 
 - **Limited Reusability & Standardization**  
   Key process elements—like email templates, registration forms, and certificate generation—lack standardization. Each new training setup often requires recreating similar components from scratch, resulting in inefficiencies and inconsistent participant experiences.
-
- ## Project Goals :checkered_flag:
 
 # To-Be Process
 - **Scope and focus** PLACEHOLDER --> Clearly outline areas where we focused and how they positivly impact the identified process challenges
