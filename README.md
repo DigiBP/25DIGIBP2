@@ -160,7 +160,23 @@ The next user task is selecting the training topic. In this scenario, GWP offers
 In a more sophisticated setup with a larger pool of lecturers covering diverse fields, this selection could also be leveraged to target those with specific expertise.
 
 ### Send link to lecturers
+This service task is implemented via Rest API call to the integration platform make. The scenario is implemented as follows:
 
+<img width="1072" alt="Bildschirmfoto 2025-05-20 um 13 22 39" src="https://github.com/user-attachments/assets/e6608544-1625-494c-9b72-bfccc943053a" />
+
+Custom Webhook: Camunda triggers this webhook once the GWP coordinator has chosen the training. The selected trainingtopic is submitted in a variable.
+
+Google Sheets - Search Rows: Searches the registered trainers in the CRM Database containing names, addresses and email addresses.
+
+Iterator - Splits the array of found trainers so that the flow can work for one trainer at a time.
+
+Calendly - List Event Types - Pulls the complete list of event types from the calendly account.
+
+Filter "SelectEventType" - Compares the pulled events from calendly against the input from the GWP coordinator. this ensures that the scheduling link is created for the right training session.
+
+Calendly - Create a singl-use scheduling link - Generates a unique one-time booking URL for the specific event type / trainer combination.
+
+Gmail - Send an Email -  
 
 
 
