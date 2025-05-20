@@ -102,6 +102,8 @@ Participants who missed the live session can complete the training asynchronousl
 - A self-study test (PDF).
 
 Upon passing the test, a personalized certificate is issued and sent via email.
+This process step will not be further elaborated in the project work due to time and scope constraints.
+
 
 ## 📌 BPMN Diagram – AS-IS Training Process at GWP
 ![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
