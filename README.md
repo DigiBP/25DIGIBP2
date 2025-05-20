@@ -172,53 +172,106 @@ The current training process at GWP, while structured, presents several challeng
 
 # Implementation
 
-## Process "Training scheduling":
+## Process: Training Scheduling
 
-<img width="975" alt="Bildschirmfoto 2025-05-18 um 12 27 36" src="https://github.com/user-attachments/assets/d65b3f20-d0be-4b4e-95bd-e772b466aca2" />
+![Training Scheduling BPMN](https://github.com/user-attachments/assets/d65b3f20-d0be-4b4e-95bd-e772b466aca2)
 
-### Start-Event
-The trainer scheduling process can be initiated either manually or at a predetermined interval (e.g. every 3 months). Starting the process based on a time-triggered event could be useful for continuously checking the availability of trainers and offering respective trainings.
+### Start Event
+The training scheduling process can be initiated either manually or at a defined interval (e.g., every 3 months). Automating the process start based on a time-triggered event allows for regular outreach to lecturers and ensures that new training dates are proactively offered.
 
-### Update Calendly Event Types
-The first step for the coordinator at GWP is to update the Calendly Event Types. Calendly is an external tool that facilitates scheduling meetings between groups. In this case, we use Calendly to allow trainers to provide their availability. Each training offered has its own separate Event Type:
+---
 
-<img width="1060" alt="Bildschirmfoto 2025-05-18 um 12 45 31" src="https://github.com/user-attachments/assets/840824dd-1efe-4981-83d1-692bc15880bc" />
+### User Task: Update Calendly Event Types
+The process begins with the GWP coordinator updating Calendly Event Types. Calendly is used to collect availability from lecturers, with each training topic assigned to a specific event type.  
+Before proceeding, the coordinator ensures:
+- All relevant training sessions are listed,
+- Availability restrictions (e.g., holidays, blocked times) are respected.
 
-Before sending out the Calendly links, the GWP coordinator must ensure that the Event Types are up to date and include all relevant information. Additionally, the coordinator can block specific time slots when the training facility is unavailable or when a training session should not be scheduled on a particular date or time.
-Since this task is implemented as a user task, the GWP coordinator will be prompted to confirm that all Calendly Event Types have indeed been updated:
+As this is a user task, Camunda prompts the coordinator to confirm that all event types are up to date before continuing.
 
-<img width="761" alt="Bildschirmfoto 2025-05-18 um 12 54 15" src="https://github.com/user-attachments/assets/05b356aa-837b-4663-8679-0f8c4acffa0f" />
+---
 
-### Choose training topic
-The next user task is selecting the training topic. In this scenario, GWP offers three different types of training to its customers. The GWP coordinator can choose one of these three topics, and that choice will be used in the next step to match the selection with the corresponding Calendly event types. So the Coordinator picks the training that should be performed next:
+### User Task: Choose Training Topic
+The coordinator selects one of three available training topics offered by GWP. This selection is passed as a process variable and will determine which event types and lecturers are targeted in the following step.
 
-<img width="885" alt="Bildschirmfoto 2025-05-18 um 13 17 52" src="https://github.com/user-attachments/assets/fefe7414-2c94-4a32-8249-8bb08ed01125" />
+---
 
-In a more sophisticated setup with a larger pool of lecturers covering diverse fields, this selection could also be leveraged to target those with specific expertise.
+### Service Task: Send Link to Lecturers
+This step is executed via Make.com, triggered by a Camunda webhook. It performs the following:
 
-### Send link to lecturers
-This service task is implemented via Rest API call to the integration platform make. The scenario is implemented as follows:
+![Make Scenario – Send to Lecturers](https://github.com/user-attachments/assets/e6608544-1625-494c-9b72-bfccc943053a)
 
-<img width="1072" alt="Bildschirmfoto 2025-05-20 um 13 22 39" src="https://github.com/user-attachments/assets/e6608544-1625-494c-9b72-bfccc943053a" />
+1. **Webhook Trigger:** Activated by Camunda, sending the selected training topic.
+2. **Google Sheets – Search Rows:** Looks up registered lecturers from a CRM sheet.
+3. **Iterator:** Breaks the results into individual lecturer entries.
+4. **Calendly – List Event Types:** Fetches all active training slots.
+5. **Filter "SelectEventType":** Matches the topic to the correct event type.
+6. **Calendly – Create Single-Use Link:** Generates a unique booking URL per lecturer.
+7. **Gmail – Send Email:** Delivers personalized emails to each lecturer.
+8. **Webhook Response:** Sends an “OK” back to Camunda.
 
-**Custom Webhook**: Camunda triggers this webhook as soon as the GWP coordinator selects a training topic.
-The chosen topic is passed to Make in a process variable.
+---
 
-**Google Sheets - Search Rows**: Looks up the registered trainers in the CRM database, returning their names, addresses, and email addresses.
+### Intermediate Event: Wait for 7 Days
+This timer event introduces a 7-day pause, giving lecturers time to respond. It's implemented as a Camunda timer event, but the delay duration is fully configurable.
 
-**Iterator**: Breaks the trainer array into individual items so the scenario can handle one trainer at a time.
+---
 
-**Calendly - List Event Types**: Retrieves the complete list of event types from the Calendly account.
+### Service Task: Check Received Answers
+This scenario continuously runs in Make.com, monitoring for incoming bookings and logging responses in a CRM Google Sheet:
 
-**Filter "SelectEventType"**: Compares the event types pulled from Calendly with the topic supplied by the coordinator, ensuring the scheduling link is created for the correct training session.
+![Make Scenario – Monitor Answers](https://github.com/user-attachments/assets/f21c5f30-2e7d-4740-976a-7fdc9e4c56dd)
 
-**Calendly - Create a singl-use scheduling link**: Generates a unique, one-time booking URL for the specific event-type/trainer combination.
+1. **Calendly – Watch Events / List Event Invitees**
+2. **Google Sheets – Add a Row:** New responses are added to the CRM with a `"Processed"` column set to `"No"`.
+3. **Google Sheets – Search & Update:** Avoids duplicates and updates entries when necessary.
 
-**Gmail - Send an Email** Dispatches a predefined message to the trainer, containing the relevant training details and the individualized scheduling link.
+This setup ensures responses are continuously captured and marked for further processing.
 
-<img width="868" alt="Bildschirmfoto 2025-05-20 um 13 48 06" src="https://github.com/user-attachments/assets/f21c5f30-2e7d-4740-976a-7fdc9e4c56dd" />
+---
 
-**Webhook Response**: Sends an “OK” back to Camunda so the BPMN process can continue.
+### Service Task: Evaluate Lecturer Responses
+After 7 days, Camunda triggers this Make scenario to assess whether any new responses exist:
+
+![Make Scenario – Evaluate Responses](https://github.com/user-attachments/assets/ce912155-278c-4023-98b4-6f68ee59a0f4.png)
+
+1. **Webhook Trigger:** Starts when Camunda proceeds past the timer event.
+2. **Google Sheets – Search Rows:** Filters entries with `"Processed" = No"`.
+3. **Array Aggregator & Set Variable:** Compiles relevant data and sets the `rowsFound` variable using:  
+   `{{if(length(28.array) > 0; "true"; "false")}}`
+4. **Webhook Response:** Sends `rowsFound` back to Camunda.
+
+---
+
+### XOR Gateway: Received Answers from Lecturer?
+This exclusive gateway checks the value of the `rowsFound` process variable:
+
+- `${rowsFound == true}` → Continue to **Decide on Lecturer**
+- `${rowsFound == false}` → End process (no response received)
+
+Implemented natively in Camunda, this decision gate ensures the process only proceeds when responses are available, maintaining efficiency.
+
+---
+
+### Service Task: Decide on Lecturer
+This service task is implemented via Make.com and is responsible for selecting the best available lecturer based on participant ratings and availability.
+
+**Process Logic:**
+
+1. **Webhook Trigger:** Camunda sends a webhook call to Make.com.
+2. **Google Sheets – Clear Staging Sheet:**  
+   The `updateWebsite` sheet is cleared to ensure no stale or leftover data interferes with the current run.
+3. **Google Sheets – Search Rows:**  
+   Searches the `ProvidedAvailability` sheet for entries marked as `"Processed" = No"` and sorts them by **User Rating** (0–5 scale).
+4. **Array Aggregator – Rank by Rating:**  
+   Sorts the lecturers by rating and selects the top entry as the preferred instructor.
+5. **Google Sheets – Add to Staging Sheet:**  
+   Writes the selected lecturer’s information into the `updateWebsite` sheet. This will later be used to update the registration site.
+6. **Webhook Response to Camunda:**  
+   Sends a 200-OK to Camunda so the process can continue.
+7. **Google Sheets – Update Processed Flags:**  
+   All entries used in the selection process are updated to `"Processed" = Yes"` to avoid reprocessing in future executions.
+
 
 
 ## Process "Participant Registration":
