@@ -735,7 +735,6 @@ Email not equal to Email: `{  "participantRegistered": false  }` = Google Sheet 
 Email equal Email: `{  "participantRegistered": true  }` = Participant already registered in the data base. No action needed.  
 **5. Webhook Response:** Sends an "false" or "true” back to Camunda.
 
----
 
 ## Process "Training Completion Processing":
 
