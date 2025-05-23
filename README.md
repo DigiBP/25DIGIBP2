@@ -439,8 +439,8 @@ The registration form collects:
 ## Google Sheets Integration
 
 # Integration Flow
-1. Course Data Display: GET request to fetch course information
-2. Registration Submission: POST request to store registration data
+1. Course Data Display: GET request to fetch course information to Spreadsheet tab "updateAvalability"
+2. Registration Submission: POST request to store registration data "Anti-Money Laundering (AML)_Registration Data"
 3. Validation & Feedback: Response handling for user notification
 
 # Google Sheets Integration Code
