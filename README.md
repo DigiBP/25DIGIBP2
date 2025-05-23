@@ -285,7 +285,7 @@ This service task is implemented via Make.com and is responsible for selecting t
 ## Process "Participant Registration":
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
 
-### GWP Registration Website:
+### GWP Training Registration Website:
 
 In order for participants beeing able to register to GWP's courses, above mentioned GWP Training Registration website is setup. It allows participants to view available courses and register through a user-friendly form. To see the website in action use the following youtube link:
 
