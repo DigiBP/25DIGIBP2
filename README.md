@@ -676,26 +676,66 @@ function doPost(e) {
 ### Check received answers:
 
 Once a registration has been successfully completed, the corresponding entry in the Google Sheet is automatically updated. In the column "Registration Successful", the value "Yes"    is added.The trigger for this process is a defined date that indicates when registrations are open. From this point on, incoming registrations are processed and the data is cross-    checked with the existing Google Sheet. This ensures that only fully and correctly registered participants are taken into account.
- 
+
 <img width="1335" alt="image" src="https://github.com/user-attachments/assets/73abdf4a-23ed-4554-92e5-e7b2689ce4d9" />
-  
-<img width="1412" alt="image" src="https://github.com/user-attachments/assets/62820053-0c8d-4d68-bdfa-a9326b3878f7" />
+
+**Process Logic:**
+
+**1. Webhook Trigger:** Activated by Camunda  
+**2. Google Sheet - Search Rows:** Looks up new registered participants from the website.  
+
+<img width="1400" alt="image" src="https://github.com/user-attachments/assets/e5f76c9a-918c-43f3-9598-a864001494df" />  
+
+**3. Google Sheet - Update a row:** Transfers the data from the registration (Anti-Money Laundering) to the customer_data sheet and creates a new customer ID.  
+
+<img width="1228" alt="image" src="https://github.com/user-attachments/assets/17d64144-58cd-47a7-b76f-802def06e7c1" />  
+
+**4. Webhook Response:** Sends an “OK” back to Camunda.  
+
+
+---
+
 
 ### Send confirmation link:
 
 As soon as a registration is successfully completed, participants automatically receive a confirmation email. This email serves as a thank you for the successful registration and includes the link to the corresponding Microsoft Teams meeting. The email is sent automatically, ensuring that all registered participants promptly receive the necessary information for their participation.
  
 <img width="971" alt="image" src="https://github.com/user-attachments/assets/bbadac4b-0dc9-48b5-b164-fc4f3861cc23" />
+
+**Process Logic:**
+
+**1. Webhook Trigger:** Activated by Camunda\
+**2. Google Sheet - Search Rows:** If the participant has been successfully registered, the "registration successfull" column will show `yes`.
+
+<img width="1412" alt="image" src="https://github.com/user-attachments/assets/62820053-0c8d-4d68-bdfa-a9326b3878f7" />
+
+**3. Gmail - Send Email:** Delivery peronalized email to the registered participants.
+   
+<img width="523" alt="image" src="https://github.com/user-attachments/assets/d8f198d9-a1dd-432f-afdc-9ef8eb8e51cc" />
   
 <img width="644" alt="image" src="https://github.com/user-attachments/assets/0642c5c2-12e7-4594-a306-786990727e28" />
 
+**4. Webhook Response:** Sends an “OK” back to Camunda.
+
+---
+
 ### Check if participant is in database and if not register participant
 
-In the final step, the system checks whether the registered person already exists in the database. If the person is not found, a new Customer ID is generated, and the essential data, such as the name and email address, is added to the database.
+In the final step, the system checks whether the registered person already exists in the database. If the person is not found,the essential data, such as the name and email address, is added to the database.
 
 <img width="1077" alt="image" src="https://github.com/user-attachments/assets/f14c42b0-e8fe-4dbd-bc0f-00f1364ecfa2" />
 
-<img width="1214" alt="image" src="https://github.com/user-attachments/assets/be690853-76ae-4dba-8534-8f5bde40e6e9" />
+**Process Logic:**
+
+**1. Webhook Trigger:** Activated by Camunda  
+**2. Google Sheet - Search Rows:** Looks up the registered participants in "Anti-Money Laundering".  
+**3. Google Sheet - Search Rows:** Compares the participants from the ‘Anti-Money Laundering’ course with the ‘Customer-Data’ database and checks whether the participant is already registered in the database.  
+**4. Router:** E-Mail = Two conditions available  
+Email not equal to Email: `{  "participantRegistered": false  }` = Google Sheet with "add a row" --> Participant is not included in the database, so it must be registered.  
+Email equal Email: `{  "participantRegistered": true  }` = Participant already registered in the data base. No action needed.  
+**5. Webhook Response:** Sends an "false" or "true” back to Camunda.
+
+---
 
 ## Process "Training Completion Processing":
 
