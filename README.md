@@ -287,10 +287,10 @@ This service task is implemented via Make.com and is responsible for selecting t
 
 ### GWP Registration Website:
 
-In order for participants beeing able to register to GWP's courses, above mentioned GWP Training Registration website is setup. It allows participants to view available courses and register through a user-friendly form. 
+In order for participants beeing able to register to GWP's courses, above mentioned GWP Training Registration website is setup. It allows participants to view available courses and register through a user-friendly form. To see the website in action use the following youtube link:
 
 
-![DAFA34BB-A3F1-4692-8B09-0732EED001BF_4_5005_c](https://github.com/user-attachments/assets/13cb102d-c93d-4490-aa54-46504d04fb3f)
+https://youtu.be/g6MmasZI31U
 
 
 Key features of the registration website are the following:
@@ -330,7 +330,19 @@ In order not to flod this documentation with website content we packed the whole
 
 ## Frontend Components
 
-# HTML Structure 
+
+# HTML Structure
+
+Deployment URL
+The application is accessible at: https://gwp-registration-8zh0reb8w-moritzs-projects-ed6c1909.vercel.app/
+
+Deployment Process
+1. Vercel automatically builds and deploys the static site
+2. Global CDN ensures fast loading times
+3. Automatic HTTPS certificate management
+4. Environment variables can be set in the Vercel dashboard if needed
+
+
 The main page includes:
 
 <header>
@@ -371,30 +383,6 @@ The main page includes:
     <!-- Contact information and map -->
 </section>
 
-## Registration Form
-
-The registration form collects:
-
-- First and Last Name
-- Company
-- Email
-- Address, Postcode, City
-- Course information (automatically populated)
-
-<form id="registrationForm">
-    <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="First_Name" required>
-    </div>
-    <!-- Other form fields... -->
-    <input type="hidden" id="courseName" name="Course_Name">
-    <input type="hidden" id="courseDate" name="Course_Date">
-    <div class="form-group">
-        <button type="submit" class="submit-button">Submit Registration</button>
-    </div>
-    <div class="loading-spinner" id="loadingSpinner"></div>
-</form>
-
 # Contact Section
 
 The contact section displays:
@@ -420,6 +408,31 @@ The contact section displays:
     </div>
   </div>
 </section>
+
+
+# Registration Form
+
+The registration form collects:
+
+- First and Last Name
+- Company
+- Email
+- Address, Postcode, City
+- Course information (automatically populated)
+
+<form id="registrationForm">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="First_Name" required>
+    </div>
+    <!-- Other form fields... -->
+    <input type="hidden" id="courseName" name="Course_Name">
+    <input type="hidden" id="courseDate" name="Course_Date">
+    <div class="form-group">
+        <button type="submit" class="submit-button">Submit Registration</button>
+    </div>
+    <div class="loading-spinner" id="loadingSpinner"></div>
+</form>
 
 
 
@@ -491,6 +504,8 @@ function sendFormData(formData) {
   });
 }
 
+
+
 # Fetching Course Data
 
 function fetchCourseAvailability() {
@@ -509,6 +524,8 @@ function fetchCourseAvailability() {
       }
     });
 }
+
+
 
 # Form Validation System
 
@@ -553,6 +570,8 @@ function processFormSubmission(formData) {
         });
 }
 
+
+
 ## Google Apps Script (Backend)
 
 The Google Apps Script handles two main functions:
@@ -573,6 +592,8 @@ function doGet(e) {
     })).setMimeType(ContentService.MimeType.JSON);
   }
 }
+
+
 
 # Registration Processing (POST Requests)
 
@@ -647,7 +668,6 @@ function doPost(e) {
     })).setMimeType(ContentService.MimeType.JSON);
   }
 }
-
 
 
 ```
