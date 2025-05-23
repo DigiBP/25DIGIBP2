@@ -282,9 +282,376 @@ This service task is implemented via Make.com and is responsible for selecting t
 
 <img width="266" alt="image" src="https://github.com/user-attachments/assets/f08c6d05-b225-4e51-a845-90a623868e1a" />
 
-
 ## Process "Participant Registration":
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
+
+### GWP Registration Website:
+
+In order for participants beeing able to register to GWP's courses, above mentioned GWP Training Registration website is setup. It allows participants to view available courses and register through a user-friendly form. 
+
+
+![DAFA34BB-A3F1-4692-8B09-0732EED001BF_4_5005_c](https://github.com/user-attachments/assets/13cb102d-c93d-4490-aa54-46504d04fb3f)
+
+
+Key features of the registration website are the following:
+
+- Course Information Display: Dynamic course details fetched from Google Sheets
+- Registration Form: Mobile-responsive registration modal with validation
+- Google Sheets Integration: Serverless data storage solution
+- Corporate Design: Implementation of GWP's brand identity
+
+The GWP Training Registration Website provides a complete, serverless solution for course registration. Key advantages include:
+
+1. No Backend Server: Uses Google Apps Script for data processing
+2. Simple Maintenance: Updates can be made directly in Google Sheets
+3. Responsive Design: Works on all devices
+4. Corporate Branding: Matches GWP's visual identity
+5. Global Hosting: Fast loading via Vercel's CDN
+
+In order not to flod this documentation with website content we packed the whole technical arcitecture details in the following code block:
+
+<details>
+  <summary>▶️ To see the full integration log an code click here </summary>
+
+  ```text
+### Technical Architecture:
+
+## Frontend (Vercel-hosted)
+
+- Static HTML/CSS/JavaScript
+- Responsive design with mobile support
+- Deployed on Vercel's global CDN
+
+## Backend (Google Apps Script)
+
+- Web App endpoint for data operations
+- Google Sheets for data storage
+- No traditional server required
+
+## Frontend Components
+
+# HTML Structure 
+The main page includes:
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="https://www.gwp.ch/layout/logo/gwp_logo-plain.svg" alt="GWP Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Training 2025</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <!-- Hero content -->
+    </section>
+
+    <section class="courses">
+        <div class="container">
+            <h2>Available Courses</h2>
+            <div class="course-grid" id="courseList">
+                <!-- Course items loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <!-- Registration form -->
+    </div>
+</main>
+
+<section id="contact">
+    <!-- Contact information and map -->
+</section>
+
+## Registration Form
+
+The registration form collects:
+
+- First and Last Name
+- Company
+- Email
+- Address, Postcode, City
+- Course information (automatically populated)
+
+<form id="registrationForm">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="First_Name" required>
+    </div>
+    <!-- Other form fields... -->
+    <input type="hidden" id="courseName" name="Course_Name">
+    <input type="hidden" id="courseDate" name="Course_Date">
+    <div class="form-group">
+        <button type="submit" class="submit-button">Submit Registration</button>
+    </div>
+    <div class="loading-spinner" id="loadingSpinner"></div>
+</form>
+
+# Contact Section
+
+The contact section displays:
+
+<section id="contact">
+  <div class="contact-container">
+    <div class="contact-info">
+      <img src="https://www.gwp.ch/layout/logo/gwp_logo-plain.svg" alt="gwp logo">
+      <div>Bleicherweg 72 - 8002 Zürich</div>
+      <div>+41 44 221 91 00</div>
+      <div>
+        <a href="mailto:zurich@gwp-group.com">zurich@gwp-group.com</a>
+      </div>
+      <div>
+        <a href="https://www.gwp.ch/de/home" target="_blank">www.gwp.ch/de/home</a>
+      </div>
+    </div>
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps?q=Bleicherweg+72,+8002+Zürich,+Switzerland&output=embed"
+        width="100%" height="350" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+
+## Google Sheets Integration
+
+# Integration Flow
+1. Course Data Display: GET request to fetch course information
+2. Registration Submission: POST request to store registration data
+3. Validation & Feedback: Response handling for user notification
+
+# Google Sheets Integration Code
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCYq9J38ckend7yWCEDSlQ6J-uUQ3uBVfNrhn8TgEHu2btO71GmQ6l-GZJAKSV5y4w0Q/exec';
+
+// Define the exact fields we want to collect and save
+const ALLOWED_FIELDS = [
+  'First_Name',
+  'Last_Name',
+  'Company',
+  'Email',
+  'Address',
+  'Postcode',
+  'City',
+  'Course_Name',
+  'Course_Date'
+];
+
+// Main function to send form data to Google Sheets
+function sendFormData(formData) {
+  // Filter the form data to only include allowed fields
+  const filteredData = {};
+  ALLOWED_FIELDS.forEach(field => {
+    if (formData[field] !== undefined) {
+      filteredData[field] = String(formData[field]).trim();
+    }
+  });
+  
+  // Send data to Google Apps Script endpoint
+  return new Promise((resolve, reject) => {
+    // Convert data to URL encoded format
+    const formBody = Object.entries(filteredData)
+      .map(([key, value]) => encodeURIComponent(key) + '=' + encodeURIComponent(value))
+      .join('&');
+    
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: formBody
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle success response
+      if (data.status === 'success') {
+        resolve({
+          success: true,
+          message: data.message || 'Registration submitted successfully!'
+        });
+      } else {
+        reject(new Error(data.message || 'Unknown error from server'));
+      }
+    })
+    .catch(error => {
+      // Handle error and try fallback method if needed
+      console.error('Error sending form data:', error);
+      // Fallback mechanism code...
+    });
+  });
+}
+
+# Fetching Course Data
+
+function fetchCourseAvailability() {
+  return fetch(APPS_SCRIPT_URL)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.status === 'success') {
+        return data.data;
+      } else {
+        throw new Error(data.message || 'Failed to fetch course availability');
+      }
+    });
+}
+
+# Form Validation System
+
+function processFormSubmission(formData) {
+    // Show loading state
+    document.getElementById('submit-button').disabled = true;
+    document.getElementById('submit-button').innerText = 'Submitting...';
+    
+    submitViaGoogleAppsScript(formData)
+        .then(response => {
+            console.log('Submission successful:', response);
+            
+            // Reset the form
+            document.getElementById('registration-form').reset();
+            
+            // Show success message
+            const successBanner = document.getElementById('success-message');
+            successBanner.style.display = 'block';
+            
+            // Scroll to the success message
+            successBanner.scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide the form
+            document.getElementById('registration-form-container').style.display = 'none';
+        })
+        .catch(error => {
+            // Error handling
+            console.error('Submission error:', error);
+            
+            // Show error message
+            const errorBanner = document.getElementById('error-message');
+            errorBanner.style.display = 'block';
+            errorBanner.innerText = 'There was an error submitting your registration.';
+            
+            // Scroll to the error message
+            errorBanner.scrollIntoView({ behavior: 'smooth' });
+        })
+        .finally(() => {
+            // Reset button state
+            document.getElementById('submit-button').disabled = false;
+            document.getElementById('submit-button').innerText = 'Submit';
+        });
+}
+
+## Google Apps Script (Backend)
+
+The Google Apps Script handles two main functions:
+
+# Data Retrieval (GET Requests)
+
+function doGet(e) {
+  try {
+    const availabilityData = getCourseAvailability();
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "success",
+      data: availabilityData
+    })).setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "error",
+      message: error.message
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+# Registration Processing (POST Requests)
+
+function doPost(e) {
+  try {
+    // Parse data from request
+    let data = {};
+    
+    if (e && e.parameter && Object.keys(e.parameter).length > 0) {
+      data = e.parameter;
+    }
+    else if (e && e.postData && e.postData.contents) {
+      // Parse JSON data...
+    }
+    
+    // Validate required fields
+    const requiredFields = ['First_Name', 'Last_Name', 'Email', 'Course_Name'];
+    for (const field of requiredFields) {
+      if (!data[field]) {
+        throw new Error(`Missing required field: ${field}`);
+      }
+    }
+    
+    // Map course to correct sheet
+    const courseToSheet = {
+      'Anti-Money Laundering (AML)': {
+        sheetName: 'Anti-Money Laundering (AML)_Registration Data'
+      },
+      'Fraud Detection & Prevention': {
+        sheetName: 'Fraud Detection & Prevention_Registration Data'
+      },
+      'Financial Advisory': {
+        sheetName: 'Financial Advisory_Registration Data'
+      }
+    };
+    
+    // Get the sheet info for the selected course
+    const courseInfo = courseToSheet[data.Course_Name];
+    if (!courseInfo) {
+      throw new Error(`Invalid course name: "${data.Course_Name}"`);
+    }
+    
+    // Get the correct sheet and append data
+    const ss = SpreadsheetApp.openById('1WmBn3Ye9WfuGenYQ0D6tWf1aeE1bcCbDTvCyYntHL-Y');
+    const sheet = ss.getSheetByName(courseInfo.sheetName);
+    
+    // Append data to sheet...
+    sheet.appendRow([
+      data.First_Name || '',
+      data.Last_Name || '',
+      data.Company || '',
+      data.Email || '',
+      data.Address || '',
+      data.Postcode || '',
+      data.City || '',
+      data.Course_Name || '',
+      data.Course_Date || '',
+      new Date().toISOString()
+    ]);
+    
+    // Return success response
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "success",
+      message: "Registration submitted successfully"
+    })).setMimeType(ContentService.MimeType.JSON);
+    
+  } catch (error) {
+    // Return error response
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "error",
+      message: `Error processing registration: ${error.message}`
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+
+
+```
+</details>
 
 ### Check received answers:
 
