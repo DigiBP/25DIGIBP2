@@ -207,17 +207,18 @@ This structured handling reduces:
 - **Manual Work**, by automating exception management.
 - **Process Transparency**, by clearly separating paths for attendees vs. non-attendees.
 
----
-
-### 🧱 Foundational Data Layer: Google Sheets CRM
-
-A dedicated **CRM database built in Google Sheets** serves as the backbone of the entire digitalized workflow. It provides a consistent, persistent data model that supports integrations across Forms, registration, attendance tracking, and certificate generation. This centralization ensures data quality, reduces duplication, and enables scalable automation across the entire training lifecycle.
 
 # Implementation
 
 ## Process: Training Scheduling
 
 ![Training Scheduling BPMN](https://github.com/user-attachments/assets/d65b3f20-d0be-4b4e-95bd-e772b466aca2)
+
+---
+
+### 🧱 Foundational Data Layer: Google Sheets CRM
+
+A dedicated **CRM database built in Google Sheets** serves as the backbone of the entire digitalized workflow. It provides a consistent, persistent data model that supports integrations across Forms, registration, attendance tracking, and certificate generation. This centralization ensures data quality, reduces duplication, and enables scalable automation across the entire training lifecycle.
 
 ### Start Event
 The training scheduling process can be initiated either manually or at a defined interval (e.g., every 3 months). Automating the process start based on a time-triggered event allows for regular outreach to lecturers and ensures that new training dates are proactively offered.
@@ -321,9 +322,44 @@ This service task is implemented via Make.com and is responsible for selecting t
 7. **Google Sheets – Update Processed Flags:**  
    All entries used in the selection process are updated to `"Processed" = Yes"` to avoid reprocessing in future executions.
 
-## PLACEHOLDER - STILL MISSING TO BE CONTINUED JC
+### User Task: Check Updated Website
+After selecting the lecturer and updating the website staging sheet, the process pauses for manual verification. The GWP coordinator must confirm that the live registration website reflects the latest data.
 
-<img width="266" alt="image" src="https://github.com/user-attachments/assets/f08c6d05-b225-4e51-a845-90a623868e1a" />
+1. **Camunda Form Task:** The form contains a single checkbox. The GWP coordinator is responsible for manually verifying the website before checking the box.
+2. **Verification Scope:** The coordinator compares the following fields displayed on the live website against the values in the `updatedWebsite` sheet in Google Sheets:
+   - Training Name  
+   - Lecturer First Name  
+   - Lecturer Last Name  
+   - Start Date  
+   - Start Time  
+   - End Date  
+   - End Time
+3. **Completion Condition:** If any discrepancies are found, the coordinator must address them before checking the box and allowing the process to continue.
+
+![Camunda Form – Check Updated Website](https://github.com/user-attachments/assets/0bfb7b4a-8164-41a3-87c2-49d1c2da2b2f)
+
+> The registration site is deployed on Vercel. Further technical details on content updates will be provided in a later section.
+
+---
+
+### Service Task: Send Link to Participants
+This step is executed via Make.com, triggered by a Camunda webhook. It performs the following:
+
+![Make Scenario – Send Link to Participants](https://github.com/user-attachments/assets/dd16fb60-5ca4-446d-9809-c63c049feb51)
+
+
+
+1. **Webhook Trigger:** Activated by Camunda to start the participant outreach workflow.
+2. **Google Sheets – Search Rows:** Looks up email addresses from the `Customer_Data` CRM sheet, using the `Email` field.
+3. **Gmail – Send an Email:** Delivers personalized emails to each potential participant. The email includes a registration link to the Vercel-hosted training site.
+![Email_sent_to_potential_participants](https://github.com/user-attachments/assets/511d9ff5-800f-4ad8-b007-8f74c94697d4)
+4. **Webhook Response:** Sends an “OK” back to Camunda, confirming successful execution.
+
+---
+
+### End Event: Training Offer Published
+Once the email has been sent to all potential participants, the BPMN process concludes with a **None End Event** in Camunda, indicating that the training offering has been successfully published and promoted.
+
 
 ## Process "Participant Registration":
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
