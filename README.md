@@ -114,7 +114,7 @@ The primary goal of this project is to improve the efficiency, scalability, and 
 - Strengthen Participant Experience
 - Increase Transparency and Monitoring
  
-## Involved Roles 🔍
+## Process Participant Roles 🔍
 - GWP – Coordinating entity (Advisor for financial service providers)
 - Participants – course attendees
 - Lecturer – the course facilitators
@@ -143,32 +143,75 @@ The current training process at GWP, while structured, presents several challeng
 - **Limited Reusability & Standardization**  
   Key process elements—like email templates, registration forms, and certificate generation—lack standardization. Each new training setup often requires recreating similar components from scratch, resulting in inefficiencies and inconsistent participant experiences.
 
-# To-Be Process
-- **Scope and focus** PLACEHOLDER --> Clearly outline areas where we focused and how they positivly impact the identified process challenges
+## 🎯 Scope and Process Improvement Focus Areas
 
-## Process Improvements
+The digitalized process implementation focuses on five key areas of the training workflow. These areas were selected based on their direct relevance to the most critical pain points identified in the AS-IS process. Each improvement is designed to reduce manual workload, eliminate redundancies, and increase process transparency, while establishing a scalable and integrated architecture supported by automation.
 
-- Process "Training scheduling":
-  1) Use of tools like Forms to streamline date coordination with lecturers.
-  2) Elimination of manual back-and-forth communication via email or chat.
-  3) Grouping of related tasks for better efficiency and visibility.
-- Process "Participant Registration":
-  1) After successful registration, the system updates the Google Sheet and ensures only valid entries are considered during the registration period.
-  2) Registered participants automatically receive a confirmation email with the Teams link.
-  3) Automatic CRM checks: if a participant is not registered, the system adds them to the CRM.
-- Process "Training delivery":
-  1) Pre-structured and automatically exported registration lists improve preparation and accuracy.
-- Process "Certification creation":
-  1) Automatic comparison of the MS Teams log data with the registration list to verify attendance.
-  2) Automated sending of certificates, reducing manual document handling.
-- Process "Non-atendees handling":
-  1) Separation of the non-attendee handling into a dedicated, structured process, rather than embedding it within other steps.
-  2) Training recording and material automatically sent to non-attendees via  Make.
-  3) Test evaluation automated using decision logic (DMN).
-  4) Certificates only generated and sent for passed participants, all handled automatically.
+### 🗓️ 1. Training Scheduling
 
+- Use of Forms as a user interface to interact with lecturers and collect availability data.
+- Elimination of manual back-and-forth communication via email or chat by using [Calendly](https://calendly.com/).
+- Grouping of related coordination tasks to improve efficiency and visibility.
 
+**🔗 Addressed Challenges:**  
+This improvement directly addresses:
+- **Communication Delays**, by replacing unstructured coordination with structured inputs.
+- **Manual Work & Media Disruptions**, by streamlining and digitizing the initial scheduling workflow.
 
+---
+
+### 📝 2. Participant Registration
+
+- After successful registration, the system updates a central Google Sheet, effectively our CRM, and validates entries in real time.
+- Registered participants automatically receive a confirmation email with the Microsoft Teams link.
+- CRM integration ensures that participants not yet in the system are automatically added.
+
+**🔗 Addressed Challenges:**  
+This improvement addresses:
+- **Lack of Automation**, by enabling real-time responses and confirmations.
+- **Tool Fragmentation & Siloed Systems**, by centralizing data in a unified CRM layer within Google Sheets.
+
+---
+
+### 🎥 3. Training Delivery
+
+- Pre-structured and automatically exported registration lists support instructor preparation and reduce manual effort.
+
+**🔗 Addressed Challenges:**  
+This change improves:
+- **Manual Work & Media Disruptions**, by replacing ad hoc list management with system-generated data.
+- **Process Transparency & Monitoring Gaps**, by ensuring timely, accurate information is available to instructors.
+
+---
+
+### 🧾 4. Certificate Creation
+
+- Automatic comparison of MS Teams attendance logs with the registration list to verify participation.
+- Certificates are generated and emailed automatically, minimizing manual document handling.
+
+**🔗 Addressed Challenges:**  
+This automation targets:
+- **Manual Work & Media Disruptions**, by eliminating repetitive certificate handling.
+- **Lack of Automation**, through system-driven attendance validation and document generation.
+- **Limited Reusability & Standardization**, by applying consistent certificate logic across sessions.
+
+---
+
+### ⏯️ 5. Non-Attendee Handling
+
+- Non-attendees are automatically identified and excluded from certificate generation.
+- A dedicated notification is sent to them requesting for action to resolve the no-show situation directly with the GWP coordinator.
+
+**🔗 Addressed Challenges:**  
+This structured handling reduces:
+- **Manual Work**, by automating exception management.
+- **Process Transparency**, by clearly separating paths for attendees vs. non-attendees.
+
+---
+
+### 🧱 Foundational Data Layer: Google Sheets CRM
+
+A dedicated **CRM database built in Google Sheets** serves as the backbone of the entire digitalized workflow. It provides a consistent, persistent data model that supports integrations across Forms, registration, attendance tracking, and certificate generation. This centralization ensures data quality, reduces duplication, and enables scalable automation across the entire training lifecycle.
 
 # Implementation
 
