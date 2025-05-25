@@ -363,35 +363,38 @@ Once the email has been sent to all potential participants, the BPMN process con
 
 
 ## Process 2: Participant Registration:
-![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
+![TO-BE Process – Participant Registration](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
 
-### GWP Training Registration Website:
+---
 
-In order for participants beeing able to register to GWP's courses, above mentioned GWP Training Registration website is setup. It allows participants to view available courses and register through a user-friendly form. To see the website in action use the following youtube link:
+### 🌐 Foundational Participant Interaction Layer: GWP Training Registration Website
 
+To enable participants to register for GWP’s training courses, a dedicated **GWP Training Registration Website** has been developed. It serves as the primary user interface for external participants, allowing them to browse available courses and register via a clean, mobile-optimized form.
 
-https://youtu.be/g6MmasZI31U
+A short video demo of the website can be viewed here:  
+🔗 [Watch on YouTube](https://youtu.be/g6MmasZI31U)
 
+#### Key Features
 
-Key features of the registration website are the following:
+- **Dynamic Course Information Display** – Course details are fetched in real time from a connected Google Sheets data source.
+- **Responsive Registration Form** – A mobile-friendly modal interface with input validation ensures smooth form completion across devices.
+- **Google Sheets Integration** – Submissions are written directly into the CRM layer using Google Apps Script, eliminating the need for a backend server.
+- **Corporate Design** – The site follows GWP’s branding guidelines to ensure visual consistency with other touchpoints.
 
-- Course Information Display: Dynamic course details fetched from Google Sheets
-- Registration Form: Mobile-responsive registration modal with validation
-- Google Sheets Integration: Serverless data storage solution
-- Corporate Design: Implementation of GWP's brand identity
+#### Architectural Highlights & Benefits
 
-The GWP Training Registration Website provides a complete, serverless solution for course registration. Key advantages include:
+1. **Serverless Architecture** – Built using Google Apps Script for data handling, with no dedicated backend infrastructure required.
+2. **Simple Maintenance** – Course content and availability can be updated directly in Google Sheets by GWP staff.
+3. **Responsive Design** – Optimized for desktop, tablet, and mobile viewing.
+4. **Brand Integration** – Fully aligned with GWP’s corporate design standards.
+5. **Global Hosting** – Deployed via **Vercel**, leveraging a global CDN for fast, reliable access.
 
-1. No Backend Server: Uses Google Apps Script for data processing
-2. Simple Maintenance: Updates can be made directly in Google Sheets
-3. Responsive Design: Works on all devices
-4. Corporate Branding: Matches GWP's visual identity
-5. Global Hosting: Fast loading via Vercel's CDN
+---
 
-In order not to flod this documentation with website content we packed the whole technical arcitecture details in the following code block:
+To keep this documentation focused on the process level, the full technical architecture (including code snippets and configuration logic) is provided in the expandable block below:
 
 <details>
-  <summary>▶️ To see the full integration log an code click here </summary>
+  <summary>▶️ View full website integration code and architecture </summary>
 
   ```text
 ### Technical Architecture:
@@ -753,67 +756,80 @@ function doPost(e) {
 ```
 </details>
 
-### Check received answers:
+---
 
-Once a registration has been successfully completed, the corresponding entry in the Google Sheet is automatically updated. In the column "Registration Successful", the value "Yes"    is added.The trigger for this process is a defined date that indicates when registrations are open. From this point on, incoming registrations are processed and the data is cross-    checked with the existing Google Sheet. This ensures that only fully and correctly registered participants are taken into account.
-
-<img width="1335" alt="image" src="https://github.com/user-attachments/assets/73abdf4a-23ed-4554-92e5-e7b2689ce4d9" />
-
-**Process Logic:**
-
-**1. Webhook Trigger:** Activated by Camunda  
-**2. Google Sheet - Search Rows:** Looks up new registered participants from the website.  
-
-<img width="1400" alt="image" src="https://github.com/user-attachments/assets/e5f76c9a-918c-43f3-9598-a864001494df" />  
-
-**3. Google Sheet - Update a row:** Transfers the data from the registration (Anti-Money Laundering) to the customer_data sheet and creates a new customer ID.  
-
-<img width="1228" alt="image" src="https://github.com/user-attachments/assets/17d64144-58cd-47a7-b76f-802def06e7c1" />  
-
-**4. Webhook Response:** Sends an “OK” back to Camunda.  
-
+### Start Event
+This process is triggered in parallel with **Process 1: Training Scheduling**, either manually or via a scheduled time-based trigger (e.g., every 3 months). Launching both processes concurrently ensures that participant-facing workflows (like registration and CRM updates) are prepared in sync with lecturer coordination and training offer publication.
 
 ---
 
-
-### Send confirmation link:
-
-As soon as a registration is successfully completed, participants automatically receive a confirmation email. This email serves as a thank you for the successful registration and includes the link to the corresponding Microsoft Teams meeting. The email is sent automatically, ensuring that all registered participants promptly receive the necessary information for their participation.
- 
-<img width="971" alt="image" src="https://github.com/user-attachments/assets/bbadac4b-0dc9-48b5-b164-fc4f3861cc23" />
-
-**Process Logic:**
-
-**1. Webhook Trigger:** Activated by Camunda\
-**2. Google Sheet - Search Rows:** If the participant has been successfully registered, the "registration successfull" column will show `yes`.
-
-<img width="1412" alt="image" src="https://github.com/user-attachments/assets/62820053-0c8d-4d68-bdfa-a9326b3878f7" />
-
-**3. Gmail - Send Email:** Delivery peronalized email to the registered participants.
-   
-<img width="523" alt="image" src="https://github.com/user-attachments/assets/d8f198d9-a1dd-432f-afdc-9ef8eb8e51cc" />
-  
-<img width="644" alt="image" src="https://github.com/user-attachments/assets/0642c5c2-12e7-4594-a306-786990727e28" />
-
-**4. Webhook Response:** Sends an “OK” back to Camunda.
+### Intermediate Event: Wait for 8 Days
+This timer event introduces a delay before participant data is processed. It allows sufficient time for **Process 1** to complete lecturer selection and update the public registration website. The delay is configurable; in this case, an **8-day buffer** ensures that participant registrations are only processed once the website is up to date and active.
 
 ---
 
-### Check if participant is in database and if not register participant
+### Service Task: Check Received Answers
+This task is executed via Make.com and triggered by a Camunda webhook. It checks whether new participant registrations have been received and prepares the data for further processing.
 
-In the final step, the system checks whether the registered person already exists in the database. If the person is not found,the essential data, such as the name and email address, is added to the database.
-
-<img width="1077" alt="image" src="https://github.com/user-attachments/assets/f14c42b0-e8fe-4dbd-bc0f-00f1364ecfa2" />
+![Make Scenario – Check Received Answers](https://github.com/user-attachments/assets/73abdf4a-23ed-4554-92e5-e7b2689ce4d9)
 
 **Process Logic:**
 
-**1. Webhook Trigger:** Activated by Camunda  
-**2. Google Sheet - Search Rows:** Looks up the registered participants in "Anti-Money Laundering".  
-**3. Google Sheet - Search Rows:** Compares the participants from the ‘Anti-Money Laundering’ course with the ‘Customer-Data’ database and checks whether the participant is already registered in the database.  
-**4. Router:** E-Mail = Two conditions available  
-Email not equal to Email: `{  "participantRegistered": false  }` = Google Sheet with "add a row" --> Participant is not included in the database, so it must be registered.  
-Email equal Email: `{  "participantRegistered": true  }` = Participant already registered in the data base. No action needed.  
-**5. Webhook Response:** Sends an "false" or "true” back to Camunda.
+1. **Webhook Trigger:** Activated by Camunda when registrations open.
+2. **Google Sheets – Search Rows:** Looks up new registered participants based on website form submissions.
+
+![Google Sheet CRM - Registered participants snip](https://github.com/user-attachments/assets/e5f76c9a-918c-43f3-9598-a864001494df)
+
+3. **Google Sheets – Update a Row:** Transfers confirmed registration data (e.g. for Anti-Money Laundering training) into the `Customer_Data` sheet and generates a new participant ID.
+
+![Update Registration Row](https://github.com/user-attachments/assets/17d64144-58cd-47a7-b76f-802def06e7c1)
+
+4. **Webhook Response:** Sends an “OK” back to Camunda to confirm task completion.
+
+---
+
+### Service Task: Send Confirmation Link
+After a participant has successfully registered, this task sends a confirmation email with the Microsoft Teams meeting link. The process is fully automated to ensure timely delivery.
+
+![Make Scenario – Send Confirmation Link](https://github.com/user-attachments/assets/bbadac4b-0dc9-48b5-b164-fc4f3861cc23)
+
+**Process Logic:**
+
+1. **Webhook Trigger:** Activated by Camunda.
+2. **Google Sheets – Search Rows:** Confirms that the participant's `Registration Successful` column is marked `"Yes"`.
+
+![Search Registered Rows](https://github.com/user-attachments/assets/62820053-0c8d-4d68-bdfa-a9326b3878f7)
+
+3. **Gmail – Send Email:** Sends a personalized confirmation email including the Microsoft Teams meeting link.
+
+![Email Module – Send Confirmation](https://github.com/user-attachments/assets/d8f198d9-a1dd-432f-afdc-9ef8eb8e51cc)
+![Sample Email Content](https://github.com/user-attachments/assets/0642c5c2-12e7-4594-a306-786990727e28)
+
+4. **Webhook Response:** Sends an “OK” back to Camunda.
+
+---
+
+### Service Task: Check and Register Participant in CRM
+In this step, the system verifies whether the participant already exists in the CRM (Google Sheets). If the participant is not found, they are automatically added.
+
+![Make Scenario – Check Participant in CRM](https://github.com/user-attachments/assets/f14c42b0-e8fe-4dbd-bc0f-00f1364ecfa2)
+
+**Process Logic:**
+
+1. **Webhook Trigger:** Activated by Camunda.
+2. **Google Sheets – Search Rows:** Retrieves the participant from the `Anti-Money Laundering` sheet.
+3. **Google Sheets – Search Rows:** Checks for a matching email address in the `Customer_Data` sheet.
+4. **Router – Evaluate Email Match:**
+   - If no match is found:  
+     `{ "participantRegistered": false }` → Google Sheets – **Add Row** (register participant).
+   - If a match is found:  
+     `{ "participantRegistered": true }` → No action required.
+5. **Webhook Response:** Sends `"true"` or `"false"` back to Camunda based on the participant’s CRM status.
+
+---
+
+### End Event: Participant Registered
+Once the confirmation email has been sent and the CRM has been updated (if needed), the process concludes with a **None End Event** in Camunda, signaling that the participant registration workflow is complete.
 
 
 ## Process 3: Training Completion Processing.
