@@ -210,7 +210,7 @@ This structured handling reduces:
 
 # Implementation
 
-## Process: Training Scheduling
+## Process 1: Training Scheduling
 
 ![Training Scheduling BPMN](https://github.com/user-attachments/assets/d65b3f20-d0be-4b4e-95bd-e772b466aca2)
 
@@ -362,7 +362,7 @@ This step is executed via Make.com, triggered by a Camunda webhook. It performs 
 Once the email has been sent to all potential participants, the BPMN process concludes with a **None End Event** in Camunda, indicating that the training offering has been successfully published and promoted.
 
 
-## Process "Participant Registration":
+## Process 2: Participant Registration:
 ![TO-BE Process "Training scheduling"](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
 
 ### GWP Training Registration Website:
@@ -816,7 +816,7 @@ Email equal Email: `{  "participantRegistered": true  }` = Participant already r
 **5. Webhook Response:** Sends an "false" or "true” back to Camunda.
 
 
-## Process "Training Completion Processing":
+## Process 3: Training Completion Processing.
 
 <img width="950" alt="image" src="https://github.com/user-attachments/assets/09a86e8a-5623-429b-b1c9-60f9169ab139" />
 
