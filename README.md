@@ -832,46 +832,93 @@ In this step, the system verifies whether the participant already exists in the 
 Once the confirmation email has been sent and the CRM has been updated (if needed), the process concludes with a **None End Event** in Camunda, signaling that the participant registration workflow is complete.
 
 
-## Process 3: Training Completion Processing.
+## Process 3: Training Completion Processing
 
-<img width="950" alt="image" src="https://github.com/user-attachments/assets/09a86e8a-5623-429b-b1c9-60f9169ab139" />
+![Process 3 – Training Completion BPMN](https://github.com/user-attachments/assets/09a86e8a-5623-429b-b1c9-60f9169ab139)
 
-<img width="852" alt="image" src="https://github.com/user-attachments/assets/8e50535e-f342-4fee-a91a-34d095b89916" />
+---
 
-### Check the attendance list from the teams against the CRM registration list:
+### Start Event
+This process is triggered based on the **End Date and Time** of the training session, as stored in the Google Sheets CRM. Once the scheduled end time is reached, the workflow is initiated to process participant completion, issue certificates, and handle non-attendance follow-up.
 
-<img width="1254" alt="image" src="https://github.com/user-attachments/assets/fb381bc9-ece3-4acd-ad7a-70493bcbb9b4" />
+---
 
-Once the attendance report is manually exported from Microsoft Teams and transferred into a predefined Google Sheet format, this triggers a semi-automated Make scenario. The process compares the attendance entries with the CRM registration list. When a match is found, the CRM sheet is automatically updated by marking the attendee with "Yes" in the attendance column. This step confirms the first condition required for certificate generation. Due to limited user permissions in Microsoft Teams (student role), this step could only be partially automated.
+### User Task: Upload Attendance List from Teams Meeting
+After the training session concludes, the GWP coordinator manually exports the **Microsoft Teams attendance report** and pastes it into a predefined Google Sheets format. This action serves as a trigger for the next automation step.
 
-<img width="1170" alt="image" src="https://github.com/user-attachments/assets/d8186c8a-7ad1-4d0f-955e-aebece7dccb0" />
+![Attendance Upload](https://github.com/user-attachments/assets/8e50535e-f342-4fee-a91a-34d095b89916)
 
+---
 
-### If attendance is given, send a certificate to the attendee:
-<img width="1237" alt="image" src="https://github.com/user-attachments/assets/ff99c80b-100a-41cb-aa35-54391519770e" />
+### Service Task: Check Attendance Against CRM
 
-This process is triggered by a custom webhook and initiates the automated generation and delivery of certificates. The Google Sheets module searches for participants whose attendance has already been confirmed with a "Yes" in the CRM registration sheet — a status that was established in the previous step by matching the Microsoft Teams attendance report with the registration list. Once a matching participant is found, the PDF Generator API creates a personalized certificate. The certificate is then automatically sent to the participant via Gmail. This ensures that only those who actually attended the session receive a certificate, making the process accurate and efficient.
+![Make Scenario – Check Attendance](https://github.com/user-attachments/assets/fb381bc9-ece3-4acd-ad7a-70493bcbb9b4)
 
-<img width="1344" alt="image" src="https://github.com/user-attachments/assets/48f7388e-5879-424d-a3f0-d39af12aa808" />
+Once the attendance list has been uploaded, a **Make.com scenario** is triggered. It compares the entries in the uploaded list with the participants in the CRM registration sheet.
 
+**Process Logic:**
 
-<img width="573" alt="image" src="https://github.com/user-attachments/assets/2b05cb18-5a54-438e-b3fa-0a84f3346f99" />
+1. **Google Sheets – Search Rows:** Retrieves registered participants.
+2. **Google Sheets – Compare Attendance:** Matches Teams attendees to CRM entries.
+3. **Google Sheets – Update Row:** If a match is found, marks `"Attendance"` as `"Yes"` in the CRM.
 
-### If attendance is not given, send an email to the non-attendee:
-<img width="1322" alt="image" src="https://github.com/user-attachments/assets/45a01a8e-01bc-44a7-acb9-95d6d61bdbb6" />
+> Note: Due to limited Microsoft Teams permissions, this process remains **semi-automated** — manual upload is required to initiate the matching process.
 
-This process is triggered by a custom webhook and handles participants whose attendance could not be confirmed. It searches the CRM registration sheet for entries where the attendance field is empty or not marked with “Yes”. For each non-attendee, an automated email is sent via Gmail. The message informs them that their attendance could not be verified, and kindly asks them to contact the GWP team. 
+![CRM Update – Attendance Status](https://github.com/user-attachments/assets/d8186c8a-7ad1-4d0f-955e-aebece7dccb0)
 
-<img width="1177" alt="image" src="https://github.com/user-attachments/assets/cf46da90-deac-48fc-a2d2-c274549cfcbb" />
+---
+
+### Parallel Gateway: Process Attendees and Non-Attendees
+Once the CRM is updated, the process continues in two parallel paths: one for issuing certificates to confirmed attendees, and another for notifying participants whose attendance could not be confirmed.
+
+---
+
+### Service Task: Issue Certificate and Send by Email
+
+![Make Scenario – Send Certificate](https://github.com/user-attachments/assets/ff99c80b-100a-41cb-aa35-54391519770e)
+
+This Make scenario is triggered by a custom webhook. It searches the CRM for participants marked with `"Yes"` in the attendance column and sends them a certificate.
+
+**Process Logic:**
+
+1. **Google Sheets – Search Rows:** Looks up participants with `"Attendance" = Yes"`.
+2. **PDF Generator API – Create PDF:** Generates personalized certificates based on template and participant data.
+3. **Gmail – Send Email:** Delivers the certificate as a PDF attachment to each attendee.
+
+![Certificate Generator](https://github.com/user-attachments/assets/48f7388e-5879-424d-a3f0-d39af12aa808)
+![Email Sent to Attendee](https://github.com/user-attachments/assets/2b05cb18-5a54-438e-b3fa-0a84f3346f99)
+
+---
+
+### Service Task: Inform Non-Attendees
+
+![Make Scenario – Inform Non-Attendees](https://github.com/user-attachments/assets/45a01a8e-01bc-44a7-acb9-95d6d61bdbb6)
+
+Participants whose attendance status remains empty or does not equal `"Yes"` are notified via email.
+
+**Process Logic:**
+
+1. **Google Sheets – Search Rows:** Finds CRM entries without confirmed attendance.
+2. **Gmail – Send Email:** Informs participants that their attendance could not be confirmed and invites them to reach out to the GWP team for further steps.
+
+![Email to Non-Attendee](https://github.com/user-attachments/assets/cf46da90-deac-48fc-a2d2-c274549cfcbb)
+
+---
+
+### End Event: Completion Processed
+The process concludes once both the certificate issuance and non-attendee notifications have been executed. The final **None End Event** in Camunda signals that the training session has been fully closed from an administrative standpoint.
+
 
 # Technologies used 
 | Technology | Purpose |
 | ------------- |------------------------------------
-| Camunda 7 | Workflow automation and BPM execution |
+| Camunda 7 | Workflow automation, process orchestration, and BPM execution |
 | BPMN 2.0 | Visual language for modeling business processes |
-| Make | No-code automation for apps and workflows |
-| Cursor | 
-| Google Sheets |
+| ChatGPT | Generative AI chatbot used as a copilot to problem solve, as reference, and to correct style & grammar |
+| Calendly | Highly configurable scheduling automation platform with easy out of the box integrations |
+| Make.com | No-code / Low Code automation for apps and workflows |
+| Cursor | AI powered IDE designed to enhance developer productivity |
+| Google Sheets | Web based spreadsheet application capable of basic scripting and integrations  |
 
 
 # Outlook
