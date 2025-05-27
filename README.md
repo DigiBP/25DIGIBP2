@@ -13,7 +13,7 @@
   - [7. Self-Study for no-shows](#7-self-study-for-no-shows)
   - [BPMN Diagram – AS-IS Training Process at GWP](#-bpmn-diagram--as-is-training-process-at-gwp)
 - [Project Goals 🏁](#project-goals-checkered_flag)
-  - [Involved Roles 🔍](#involved-roles-)
+  - [Process Participant Roles 🔍](#process-participant-roles-)
   - [Identified Challenges 🚧](#identified-challenges-in-the-current-as-is-process-)
 - [TO-BE Process](#to-be-process)
   - [Process Improvements](#process-improvements)
