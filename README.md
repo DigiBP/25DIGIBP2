@@ -18,10 +18,11 @@
 - [TO-BE Process](#to-be-process)
   - [Process Improvements](#process-improvements)
   - [Implementation](#implementation)
-    - [1. Process "Training scheduling"](#process-training-scheduling)
-    - [2. Process "Participant Registration"](#process-participant-registration)
-    - [3. Process "Training Completion Processing"](#process-training-completion-processing)
+    - [Process 1: Training Scheduling](#process-1-training-scheduling)
+    - [Process 2: Participant Registration](#process-2-participant-registration)
+    - [Process 3: Training Completion Processing](#process-3-training-completion-processing)
 - [Technologies used](#technologies-used)
+- [Outlook](#outlook)
 
 
 # GWP Training Program: Process Flow from Planning to Certificate Creation
