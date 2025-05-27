@@ -363,7 +363,7 @@ Once the email has been sent to all potential participants, the BPMN process con
 
 
 ## Process 2: Participant Registration:
-![TO-BE Process – Participant Registration](https://github.com/DigiBP/25DIGIBP2/blob/28effd293130ce4fd00c4af5085058144e00ca15/GWP_Process_ToBe_2_Process%20Participant%20Registration.png)
+![TO-BE Process – Participant Registration](https://github.com/user-attachments/assets/847e7da2-9c36-4887-b403-053fcbfcab2b)
 
 ---
 
