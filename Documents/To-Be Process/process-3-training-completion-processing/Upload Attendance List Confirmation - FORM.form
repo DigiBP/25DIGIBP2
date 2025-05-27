@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "text": "Tick the box below to proceed with issuing the certificate.",
+      "type": "text",
+      "layout": {
+        "row": "Row_1rqb6bd",
+        "columns": null
+      },
+      "id": "Field_0ofig6p"
+    },
+    {
+      "label": "I confirm that the attendance list from Teams is uploaded.",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0x112kj",
+        "columns": null
+      },
+      "id": "Field_1nv3god",
+      "key": "checkbox_84pgkv",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_AttendancelistConfirmation",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.32.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 18
+}
