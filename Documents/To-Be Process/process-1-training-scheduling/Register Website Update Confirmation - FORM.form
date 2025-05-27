@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "text": "# Confirmation that the registration website is up to date",
+      "type": "text",
+      "layout": {
+        "row": "Row_12navw0",
+        "columns": null
+      },
+      "id": "Field_1hbbh0l"
+    },
+    {
+      "label": "Confirm",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_00jcibh",
+        "columns": null
+      },
+      "id": "Field_1gdf0e9",
+      "key": "checkbox_4wuneh",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_1mxiq3i",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.34.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.23.0",
+  "schemaVersion": 18
+}

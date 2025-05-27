@@ -1,0 +1,57 @@
+{
+  "components": [
+    {
+      "text": "# Select one training topic for which trainers should provide their availability.",
+      "id": "Field_Header",
+      "type": "text",
+      "layout": {
+        "row": "row_header"
+      },
+      "properties": {}
+    },
+    {
+      "text": "## Which training should be scheduled next?",
+      "id": "Field_SubHeader",
+      "type": "text",
+      "layout": {
+        "row": "row_subheader"
+      }
+    },
+    {
+      "label": "Training Topic",
+      "values": [
+        {
+          "label": "Financial Advisory",
+          "value": "Financial Advisory"
+        },
+        {
+          "label": "Anti‑Money Laundering (AML)",
+          "value": "Anti‑Money Laundering (AML)"
+        },
+        {
+          "label": "Fraud Detection & Prevention",
+          "value": "Fraud Detection & Prevention"
+        }
+      ],
+      "id": "Field_TopicSelector",
+      "type": "radio",
+      "description": "Choose exactly one topic from the list",
+      "key": "trainingTopic",
+      "layout": {
+        "row": "row_radio"
+      },
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_SelectTrainingTopic",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.34.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.23.0",
+  "schemaVersion": 18
+}

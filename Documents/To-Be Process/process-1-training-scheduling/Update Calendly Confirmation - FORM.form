@@ -1,0 +1,51 @@
+{
+  "components": [
+    {
+      "id": "Field_Header",
+      "type": "text",
+      "text": "# Welcome!",
+      "layout": {
+        "row": "row_header"
+      },
+      "properties": {}
+    },
+    {
+      "id": "Field_Instructions",
+      "type": "text",
+      "text": "## Please confirm that all Calendly event types have been reviewed and updated as required.",
+      "layout": {
+        "row": "row_instructions"
+      }
+    },
+    {
+      "id": "Field_SubText",
+      "type": "text",
+      "text": "Tick the checkbox below to proceed with scheduling.",
+      "layout": {
+        "row": "row_subtext"
+      }
+    },
+    {
+      "id": "Field_Confirmation",
+      "type": "checkbox",
+      "label": "I confirm that all Calendly event types are up to date.",
+      "description": "This confirmation is required before continuing.",
+      "key": "calendlyConfirmed",
+      "validate": {
+        "required": true
+      },
+      "layout": {
+        "row": "row_checkbox"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_ConfirmCalendlyEvents",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.34.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.23.0",
+  "schemaVersion": 18
+}
