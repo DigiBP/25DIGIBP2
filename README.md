@@ -44,13 +44,14 @@ Until now, GWP’s training efforts have centered primarily on content delivery 
 | Anaïs von Dach | 
 | Micaela Palma Costa | 
 
-# Coaches 📌
-- Andreas Martin
-- Charuta Pande
-- Devid Montecchiari
+# Coaches 🧑‍🏫
+| Name               |
+|--------------------|
+| Andreas Martin     |
+| Charuta Pande      |
+| Devid Montecchiari |
 
  
-
  # AS-IS Process 🚩
 The current training process at GWP is structured but involves multiple tools, isolated data repositories, and manual interventions. It suffers from inefficiencies related to repetitive tasks, copy-pasting between platforms, and the risk of human error due to limited automation.
 
@@ -369,6 +370,21 @@ This step is executed via Make.com, triggered by a Camunda webhook. It performs 
 
 ### End Event: Training Offer Published
 Once the email has been sent to all potential participants, the BPMN process concludes with a **None End Event** in Camunda, indicating that the training offering has been successfully published and promoted.
+
+---
+
+### 📂 Access the Implementation Files
+
+All implementation assets for the *Training Scheduling* process are available in the repository, including:
+
+- The BPMN model and Camunda forms  
+- The Make.com automation scenario (JSON export)  
+- A mock Google Sheets-based CRM workbook
+
+➡️ [Browse files for Process 1](./Documents/To-Be%20Process/process-1-training-scheduling)
+
+
+These resources provide a complete view of how the scheduling process was orchestrated, automated, and integrated.
 
 
 ## Process 2: Participant Registration:
