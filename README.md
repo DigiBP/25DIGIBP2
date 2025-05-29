@@ -17,10 +17,10 @@
   - [Identified Challenges in the AS-IS Process🚧](#identified-challenges-in-the-as-is-process)
 - [Scope and Process Improvement Focus Areas🎯](#scope-and-process-improvement-focus-areas)
 - [TO-BE Process Implementation🚀](#to-be-process-implementation)
-  - [Process 1: Training Scheduling🗓️](#process-1-training-scheduling)
+  - [Process 1: Training Scheduling🗓](#process-1-training-scheduling)
   - [Process 2: Participant Registration📝](#process-2-participant-registration)
   - [Process 3: Training Completion Processing🎓](#process-3-training-completion-processing)
-- [Technologies Used🛠️](#technologies-used)
+- [Technologies Used🛠](#technologies-used)
 - [Next Steps in the Digital Journey🔮](#next-steps-in-the-digital-journey)
 
 # GWP Training Program: Process Flow from Planning to Certificate Creation
@@ -219,7 +219,7 @@ This process encompasses all post-registration and post-delivery activities, inc
 
 # TO-BE Process Implementation🚀
 
-## Process 1: Training Scheduling🗓️
+## Process 1: Training Scheduling🗓
 
 ![Training Scheduling BPMN](https://github.com/user-attachments/assets/d65b3f20-d0be-4b4e-95bd-e772b466aca2)
 
@@ -960,7 +960,7 @@ All supporting materials for the *Training Completion Processing* workflow are s
 
 This resource bundle shows how completion, certification, and non-attendance handling were digitalized.
 
-# Technologies used🛠️
+# Technologies Used🛠
 | Technology | Purpose |
 | ------------- |------------------------------------
 | Camunda 7 | Workflow automation, process orchestration, and BPM execution |
