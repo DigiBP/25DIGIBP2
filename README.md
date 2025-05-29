@@ -53,6 +53,7 @@ Until now, GWP’s training efforts have centered primarily on content delivery 
 | Charuta Pande      |
 | Devid Montecchiari |
 
+[⬆️ Back to Top](#quick-navigation)
  
  # AS-IS Process 🚩
 The current training process at GWP is structured but involves multiple tools, isolated data repositories, and manual interventions. It suffers from inefficiencies related to repetitive tasks, copy-pasting between platforms, and the risk of human error due to limited automation.
