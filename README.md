@@ -1,9 +1,9 @@
 ## Table of Contents
 
-- [Introduction 📥](#introduction-)
-- [Team Members 👥](#team-members-)
-- [Coaches 🧑‍🏫](#coaches-)
-- [AS-IS Process 🚩](#as-is-process-)
+- [Introduction📥](#introduction-)
+- [Team Members👥](#team-members-)
+- [Coaches🧑‍🏫](#coaches-)
+- [AS-IS Process🚩](#as-is-process-)
   - [1. Training Planning and Coordination](#1-training-planning-and-coordination)
   - [2. Registration Page and Promotion](#2-registration-page-and-promotion)
   - [3. Participant Registration and Confirmation](#3-participant-registration-and-confirmation)
@@ -11,18 +11,17 @@
   - [5. Training Delivery and Attendance Tracking](#5-training-delivery-and-attendance-tracking)
   - [6. Training Completion Processing](#6-training-completion-processing)
   - [7. Self-Study for No-Shows](#7-self-study-for-no-shows)
-- [📄 BPMN Diagram – AS-IS Training Process at GWP](#bpmn-diagram--as-is-training-process-at-gwp)
-- [🎯 Project Goals and Focus Areas](#project-goals-and-focus-areas)
-  - [🔍 Process Participant Roles](#process-participant-roles)
-  - [🚧 Identified Challenges in the AS-IS Process](#identified-challenges-in-the-as-is-process)
-- [✅ Scope and Process Improvement Focus Areas](#scope-and-process-improvement-focus-areas)
-- [🚀 TO-BE Process Implementation](#to-be-process-implementation)
-  - [🗓️ Process 1: Training Scheduling](#process-1-training-scheduling)
-  - [📝 Process 2: Participant Registration](#process-2-participant-registration)
-  - [🎓 Process 3: Training Completion Processing](#process-3-training-completion-processing)
+- [BPMN Diagram – AS-IS Training Process at GWP🚩](#bpmn-diagram-as-is-training-process-at-gwp)
+- [Project Goals 🏁](#project-goals)
+  - [Process Participant Roles 🔍](#process-participant-roles)
+  - [Identified Challenges in the AS-IS Process🚧](#identified-challenges-in-the-as-is-process)
+- [Scope and Process Improvement Focus Areas🎯](#scope-and-process-improvement-focus-areas)
+- [TO-BE Process Implementation🚀](#to-be-process-implementation)
+  - [Process 1: Training Scheduling🗓️](#process-1-training-scheduling)
+  - [Process 2: Participant Registration📝](#process-2-participant-registration)
+  - [Process 3: Training Completion Processing🎓](#process-3-training-completion-processing)
 - [🛠️ Technologies Used](#technologies-used)
 - [🔮 Next Steps in the Digital Journey](#next-steps-in-the-digital-journey)
-
 
 # GWP Training Program: Process Flow from Planning to Certificate Creation
 
@@ -101,7 +100,7 @@ Upon passing the test, a personalized certificate is issued and sent via email.
 This process step will not be further elaborated in the project work due to time and scope constraints.
 
 
-## 📌 BPMN Diagram – AS-IS Training Process at GWP
+## 📌BPMN Diagram – AS-IS Training Process at GWP
 ![GWP As-Is Process Diagram](https://github.com/user-attachments/assets/49a511e7-c2d6-4595-92b5-492dc0883cf5)
 
 > The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages. The focus of this group will be on the processes highlighted in green: Training Scheduling, Participant Registration, and Training Completion Processing
@@ -217,7 +216,7 @@ This process encompasses all post-registration and post-delivery activities, inc
 - **Limited Reusability & Standardization**, through consistent logic for attendance and certification  
 - **Data Handling Issues**, via structured registration exports and validated attendance input
 
-# Implementation
+# TO-BE Process Implementation🚀
 
 ## Process 1: Training Scheduling
 
