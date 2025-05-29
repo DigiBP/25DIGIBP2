@@ -106,6 +106,7 @@ Participants who missed the live session can complete the training asynchronousl
 Upon passing the test, a personalized certificate is issued and sent via email.
 This process step will not be further elaborated in the project work due to time and scope constraints.
 
+[⬆️ Back to Top](#table-of-contents)
 
 ## BPMN Diagram–AS-IS Training Process at GWP🚩
 ![GWP As-Is Process Diagram](https://github.com/user-attachments/assets/49a511e7-c2d6-4595-92b5-492dc0883cf5)
@@ -114,6 +115,8 @@ This process step will not be further elaborated in the project work due to time
 
 
 [Download the complete AS-IS BPMN file HERE](./Documents/As-Is%20Process/AS-IS%20Training%20Process%20at%20GWP.bpmn)
+
+[⬆️ Back to Top](#table-of-contents)
 
 # Project Goals🏁
 
@@ -161,6 +164,7 @@ The use of disconnected tools such as Pimcore, Outlook, Inxmail, CAS, Excel, and
 - **Process Transparency & Monitoring Gaps**  
   There is limited visibility into the real-time status of the training process. Without centralized tracking, it's difficult to monitor progress, identify bottlenecks, or report reliably on process performance.
   
+[⬆️ Back to Top](#table-of-contents)
 
 ## Scope and Process Improvement Focus Areas🎯
 
@@ -222,6 +226,8 @@ This process encompasses all post-registration and post-delivery activities, inc
 - **Process Transparency**, by ensuring instructors and the system have timely, accurate data  
 - **Limited Reusability & Standardization**, through consistent logic for attendance and certification  
 - **Data Handling Issues**, via structured registration exports and validated attendance input
+
+[⬆️ Back to Top](#table-of-contents)
 
 # TO-BE Process Implementation🚀
 
@@ -391,6 +397,7 @@ All implementation assets for the *Training Scheduling* process are available in
 
 These resources provide a complete view of how the scheduling process was orchestrated, automated, and integrated.
 
+[⬆️ Back to Top](#table-of-contents)
 
 ## Process 2: Participant Registration📝
 ![TO-BE Process – Participant Registration](https://github.com/user-attachments/assets/847e7da2-9c36-4887-b403-053fcbfcab2b)
@@ -876,6 +883,7 @@ _Note: The code for the registration website is included as a collapsable sectio
 
 These components illustrate how the registration flow was automated and connected to our CRM layer.
 
+[⬆️ Back to Top](#table-of-contents)
 
 ## Process 3: Training Completion Processing🎓
 
@@ -966,6 +974,8 @@ All supporting materials for the *Training Completion Processing* workflow are s
 
 This resource bundle shows how completion, certification, and non-attendance handling were digitalized.
 
+[⬆️ Back to Top](#table-of-contents)
+
 # Technologies Used🛠
 | Technology | Purpose |
 | ------------- |------------------------------------
@@ -998,6 +1008,8 @@ While the current implementation delivers strong improvements in process efficie
   To improve transparency and compliance, especially in regulated contexts, a versioned audit log of process events and participant interactions could be maintained, possibly integrated into the CRM layer.
 
 These enhancements would enable GWP to move closer to intelligent orchestration — and lay the foundation for scaling the platform to cover all of its remote offering
+
+[⬆️ Back to Top](#table-of-contents)
 
 
 
