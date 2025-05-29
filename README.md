@@ -105,7 +105,9 @@ This process step will not be further elaborated in the project work due to time
 ![GWP As-Is Process Diagram](https://github.com/user-attachments/assets/49a511e7-c2d6-4595-92b5-492dc0883cf5)
 
 > The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages. The focus of this group will be on the processes highlighted in green: Training Scheduling, Participant Registration, and Training Completion Processing
-[Download the complete AS-IS BPMN file HERE](../25DIGIBP2/Documents/As-Is%20Process/AS-IS%20Training%20Process%20at%20GWP.bpmn)
+
+
+[Download the complete AS-IS BPMN file HERE](./Documents/As-Is%20Process/AS-IS%20Training%20Process%20at%20GWP.bpmn)
 
 # Project Goals :checkered_flag:
 
