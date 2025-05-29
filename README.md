@@ -973,7 +973,27 @@ This resource bundle shows how completion, certification, and non-attendance han
 | Google Sheets | Web based spreadsheet application capable of basic scripting and integrations  |
 
 
-# Outlook
+## 🔮 Next Steps in the Digital Journey
+
+While the current implementation delivers strong improvements in process efficiency, scalability, and participant experience, several opportunities remain to increase maturity of GWP's digital training operations:
+
+- **Multi-Course Selection Logic**  
+  The current setup supports only one training topic at a time due to Make.com's single-webhook limitation. Future iterations could incorporate a decision layer to handle course branching more dynamically — likely requiring a low-code or pro-code implementation layer.
+
+- **Instructor Selection Enhancement**  
+  While ratings-based prioritization works well for now, more advanced selection criteria (e.g. expertise matching, availability constraints, past performance) could be integrated. A DMN approach was explored but deemed unsuitable; implementing this would likely require Java or Python-based custom logic.
+
+- **Automated Non-Attendee Re-Scheduling**  
+  Today, non-attendees are notified manually. A future version could automatically trigger re-scheduling flows, including personalized links to repeat sessions or access to self-study materials (video, slides, test links).
+
+- **Participant Self-Service Portal**  
+  A central dashboard where participants could manage registrations, download certificates, or access training content would improve user autonomy and reduce administrative overhead.
+
+- **Audit Trail & Logging Layer**  
+  To improve transparency and compliance, especially in regulated contexts, a versioned audit log of process events and participant interactions could be maintained, possibly integrated into the CRM layer.
+
+These enhancements would enable GWP to move closer to intelligent orchestration — and lay the foundation for scaling the platform to cover all of its remote offering
+
 
 
 
