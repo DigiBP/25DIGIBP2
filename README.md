@@ -11,7 +11,7 @@
   - [5. Training Delivery and Attendance Tracking](#5-training-delivery-and-attendance-tracking)
   - [6. Training Completion Processing](#6-training-completion-processing)
   - [7. Self-Study for No-Shows](#7-self-study-for-no-shows)
-- [BPMN Diagram – AS-IS Training Process at GWP🚩](#bpmn-diagram-as-is-training-process-at-gwp)
+- [BPMN Diagram – AS-IS Training Process at GWP🚩](#bpmn---diagram-as-is-training-process-at-gwp)
 - [Project Goals 🏁](#project-goals)
   - [Process Participant Roles 🔍](#process-participant-roles)
   - [Identified Challenges in the AS-IS Process🚧](#identified-challenges-in-the-as-is-process)
@@ -24,7 +24,6 @@
 - [Next Steps in the Digital Journey🔮](#next-steps-in-the-digital-journey)
 
 # GWP Training Program: Process Flow from Planning to Certificate Creation
-
 
 # Introduction 📥
 GWP is a Swiss-based consultancy specializing in governance, risk, and compliance (GRC), with a strong focus on financial services and regulatory requirements. With a team of seasoned professionals, GWP supports banks, insurers, and other institutions in navigating the complex landscape of financial regulation, internal control systems, and risk management. The firm is known for its pragmatic approach, combining deep regulatory expertise with operational implementation support to help clients achieve sustainable compliance and operational excellence.
@@ -57,7 +56,9 @@ The current training process at GWP is structured but involves multiple tools, i
 
 The process begins with internal planning to determine training dates. Invitations for Microsoft Teams sessions are manually sent via Outlook. This coordination often involves several rounds of back-and-forth, as not all proposed dates suit both GWP coordinators and instructors.
 
-## 2. Registration Page and Promotion (Runs in Parallel with Step 1)
+## 2. Registration Page and Promotion
+
+_Note: Runs in Parallel with Step 1_
 
 While training dates are still being coordinated, the marketing team begins preparing the registration page in Pimcore. This includes adding the detailed agenda and building the online registration form (available in both German and English).
 
