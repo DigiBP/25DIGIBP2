@@ -864,6 +864,7 @@ The following repository folder contains all artifacts for *Participant Registra
 
 - BPMN model for Camunda  
 - Make.com scenario for automated confirmations
+  
 _Note: The code for the registration website is included as a collapsable section in itself, therefore to avoid redundancy, it is not present in the folder referenced below_
 
 ➡️ [View files for Process 2](./Documents/To-Be%20Process/process-2-participant-registration)
