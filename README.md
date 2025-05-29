@@ -102,8 +102,10 @@ This process step will not be further elaborated in the project work due to time
 
 
 ## 📌 BPMN Diagram – AS-IS Training Process at GWP
-![GWP Prozessdiagramm](GWP_Process_As-is_250408.png)
-> The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages.
+![GWP As-Is Process Diagram](https://github.com/user-attachments/assets/49a511e7-c2d6-4595-92b5-492dc0883cf5)
+
+> The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages. The focus of this group will be on the processes highlighted in green: Training Scheduling, Participant Registration, and Training Completion Processing
+[Download the complete AS-IS BPMN file HERE](../25DIGIBP2/Documents/As-Is%20Process/AS-IS%20Training%20Process%20at%20GWP.bpmn)
 
 # Project Goals :checkered_flag:
 
@@ -123,26 +125,34 @@ The primary goal of this project is to improve the efficiency, scalability, and 
 ## Identified Challenges in the AS-IS Process 🚧 
 The current training process at GWP, while structured, presents several challenges that limit efficiency, scalability, and consistency. The following issues have been identified:
 
-- **Manual Work & Media Disruptions**  
-  Many process steps rely on manual handling and switching between tools. Tasks such as managing incoming registration emails or exporting and saving participant lists are time-consuming and error-prone. These media disruptions increase the likelihood of mistakes and slow down execution.
+### 🔄 Process Execution Challenges
 
+- **Manual Work & Workflow Disruptions**  
+  Many process steps rely on manual handling and switching between tools. Tasks such as managing incoming registration emails or exporting and saving participant lists are time-consuming and error-prone. These media disruptions increase the likelihood of mistakes and slow down execution.
+  
 - **Communication Delays**  
   Coordination between GWP, lecturers, and participants—particularly around setting and confirming training dates—often involves several rounds of back-and-forth communication. This leads to delays in publishing registration materials and complicates scheduling.
 
-- **Lack of Automation**  
-  Several actions that could be automated—such as sending confirmation emails or launching promotional campaigns—still require manual intervention. This not only increases the administrative workload but also reduces responsiveness and scalability as training volumes grow.
+- **Limited Reusability & Standardization**  
+  Key process elements—like email templates, registration forms, and certificate generation—lack standardization. Each new training setup often requires recreating similar components from scratch, resulting in inefficiencies and inconsistent participant experiences.
+
+---
+
+### 🧩 System & Tooling Limitations
+
+- **Tool Fragmentation & Siloed Systems**  
+The use of disconnected tools such as Pimcore, Outlook, Inxmail, CAS, Excel, and Share creates fragmented workflows. Data does not flow seamlessly between systems, and limited integration options prevent meaningful automation. This not only increases administrative overhead but also restricts the ability to scale the process as training demand grows.
+
+---
+
+### 🔐 Data & Compliance Risks
 
 - **Data Handling Issues**  
   Manually exporting and storing registration data introduces risks related to data consistency, accuracy, and compliance with data protection regulations. The lack of standardized, automated data flows increases vulnerability to errors and potential breaches.
 
 - **Process Transparency & Monitoring Gaps**  
   There is limited visibility into the real-time status of the training process. Without centralized tracking, it's difficult to monitor progress, identify bottlenecks, or report reliably on process performance.
-
-- **Tool Fragmentation & Siloed Systems**  
-  The use of disconnected tools such as Pimcore, Outlook, Inxmail, CAS, Excel, and Share creates fragmented workflows. Data does not flow seamlessly between systems, leading to duplication of effort and increased reliance on manual coordination.
-
-- **Limited Reusability & Standardization**  
-  Key process elements—like email templates, registration forms, and certificate generation—lack standardization. Each new training setup often requires recreating similar components from scratch, resulting in inefficiencies and inconsistent participant experiences.
+  
 
 ## 🎯 Scope and Process Improvement Focus Areas
 
