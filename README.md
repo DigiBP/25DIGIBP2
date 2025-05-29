@@ -1,3 +1,6 @@
+<details open>
+<summary><strong>📚 Quick Navigation</strong></summary>
+
 ## Table of Contents
 
 - [Introduction📥](#introduction-)
@@ -22,6 +25,8 @@
   - [Process 3: Training Completion Processing🎓](#process-3-training-completion-processing)
 - [Technologies Used🛠](#technologies-used)
 - [Next Steps in the Digital Journey🔮](#next-steps-in-the-digital-journey)
+
+  </details>
 
 # GWP Training Program: Process Flow from Planning to Certificate Creation
 
