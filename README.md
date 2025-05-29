@@ -1,5 +1,5 @@
 <details open>
-<summary><strong>📚 Quick Navigation</strong></summary>
+<summary><strong>📚Quick Navigation</strong></summary>
 
 ## Table of Contents
 
