@@ -40,7 +40,7 @@ Until now, GWP’s training efforts have centered primarily on content delivery 
 | ------------- |
 | Moritz Steiger | 
 | Sandro Premier | 
-| Juan Camilo Ramírez Gutiérrez | 
+| Juan-Camilo Ramírez | 
 | Anaïs von Dach | 
 | Micaela Palma Costa | 
 
@@ -158,68 +158,64 @@ The use of disconnected tools such as Pimcore, Outlook, Inxmail, CAS, Excel, and
 
 ## 🎯 Scope and Process Improvement Focus Areas
 
-The digitalized process implementation focuses on five key areas of the training workflow. These areas were selected based on their direct relevance to the most critical pain points identified in the AS-IS process. Each improvement is designed to reduce manual workload, eliminate redundancies, and increase process transparency, while establishing a scalable and integrated architecture supported by automation.
+As part of the initial wave of GWP’s digitalization initiative, we focused on automating three key end-to-end processes within the training lifecycle:
+
+1. 🗓️ **Training Scheduling**  
+2. 📝 **Participant Registration**  
+3. 🎓 **Training Completion Processing**
+
+These three processes were selected based on their **high impact on administrative workload, process delays, and data integrity** — and their direct connection to the core challenges identified in the AS-IS analysis. Each improvement is designed to reduce manual workload, eliminate redundancies, increase process transparency, enhance real-time visibility, while establishing a scalable and integrated architecture supported by automation. These three processes align along the end-to-end training lifecycle at GWP:
+
+![Training Process Overview and Value Stream](https://github.com/user-attachments/assets/2399c2b9-cf0b-4fed-aa1a-a2d85052b9e7)
+
+---
 
 ### 🗓️ 1. Training Scheduling
 
-- Use of Forms as a user interface to interact with lecturers and collect availability data.
-- Elimination of manual back-and-forth communication via email or chat by using [Calendly](https://calendly.com/).
-- Grouping of related coordination tasks to improve efficiency and visibility.
+- Use of Forms as a user interface to interact with lecturers and collect availability data  
+- Elimination of manual back-and-forth communication via email or chat by using [Calendly](https://calendly.com/)  
+- Grouping of related coordination tasks to improve efficiency and visibility
 
 **🔗 Addressed Challenges:**  
-This improvement directly addresses:
-- **Communication Delays**, by replacing unstructured coordination with structured inputs.
-- **Manual Work & Media Disruptions**, by streamlining and digitizing the initial scheduling workflow.
-
+- **Manual Work & Workflow Disruptions**, by digitizing initial coordination steps  
+- **Communication Delays**, by introducing structured data collection  
+- **Tool Fragmentation**, through Google Sheets CRM, Calendly, and Make.com integration
 ---
 
 ### 📝 2. Participant Registration
 
-- After successful registration, the system updates a central Google Sheet, effectively our CRM, and validates entries in real time.
-- Registered participants automatically receive a confirmation email with the Microsoft Teams link.
-- CRM integration ensures that participants not yet in the system are automatically added.
+- After successful registration, the system updates a central Google Sheet (CRM layer) and validates entries in real time  
+- Registered participants automatically receive a confirmation email with the Microsoft Teams link  
+- CRM integration ensures that participants not yet in the system are automatically added
 
 **🔗 Addressed Challenges:**  
-This improvement addresses:
-- **Lack of Automation**, by enabling real-time responses and confirmations.
-- **Tool Fragmentation & Siloed Systems**, by centralizing data in a unified CRM layer within Google Sheets.
+- **Manual Work**, by automating communication and CRM updates  
+- **Tool Fragmentation**, by consolidating registration tracking in one source  
+- **Data Handling Issues**, by ensuring consistent, compliant participant records
 
 ---
 
-### 🎥 3. Training Delivery
+### 🎓 3. Training Completion Processing
 
-- Pre-structured and automatically exported registration lists support instructor preparation and reduce manual effort.
+This process encompasses all post-registration and post-delivery activities, including preparation support for instructors, attendance validation, certificate generation, and non-attendee follow-up.
 
-**🔗 Addressed Challenges:**  
-This change improves:
-- **Manual Work & Media Disruptions**, by replacing ad hoc list management with system-generated data.
-- **Process Transparency & Monitoring Gaps**, by ensuring timely, accurate information is available to instructors.
+#### 🎥 Training Delivery Support
+- Pre-structured and automatically exported registration lists are generated prior to the session.
+- This supports instructor preparation and reduces manual effort in assembling participant data.
 
----
+#### 🧾 Certificate Creation
+- Automatic comparison of MS Teams attendance logs with the registration list  
+- Certificates are generated and emailed automatically
 
-### 🧾 4. Certificate Creation
-
-- Automatic comparison of MS Teams attendance logs with the registration list to verify participation.
-- Certificates are generated and emailed automatically, minimizing manual document handling.
-
-**🔗 Addressed Challenges:**  
-This automation targets:
-- **Manual Work & Media Disruptions**, by eliminating repetitive certificate handling.
-- **Lack of Automation**, through system-driven attendance validation and document generation.
-- **Limited Reusability & Standardization**, by applying consistent certificate logic across sessions.
-
----
-
-### ⏯️ 5. Non-Attendee Handling
-
-- Non-attendees are automatically identified and excluded from certificate generation.
-- A dedicated notification is sent to them requesting for action to resolve the no-show situation directly with the GWP coordinator.
+#### ⏯️ Non-Attendee Handling
+- Non-attendees are automatically identified and excluded from certificate generation  
+- A dedicated notification is sent requesting they contact the GWP coordinator
 
 **🔗 Addressed Challenges:**  
-This structured handling reduces:
-- **Manual Work**, by automating exception management.
-- **Process Transparency**, by clearly separating paths for attendees vs. non-attendees.
-
+- **Manual Work**, by replacing ad hoc list management and document handling  
+- **Process Transparency**, by ensuring instructors and the system have timely, accurate data  
+- **Limited Reusability & Standardization**, through consistent logic for attendance and certification  
+- **Data Handling Issues**, via structured registration exports and validated attendance input
 
 # Implementation
 
