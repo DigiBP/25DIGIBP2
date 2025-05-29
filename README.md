@@ -11,7 +11,7 @@
   - [5. Training Delivery and Attendance Tracking](#5-training-delivery-and-attendance-tracking)
   - [6. Training Completion Processing](#6-training-completion-processing)
   - [7. Self-Study for No-Shows](#7-self-study-for-no-shows)
-- [BPMN Diagram – AS-IS Training Process at GWP🚩](#bpmn---diagram-as-is-training-process-at-gwp)
+- [BPMN Diagram–AS-IS Training Process at GWP🚩](#bpmn-diagramas-is-training-process-at-gwp)
 - [Project Goals 🏁](#project-goals)
   - [Process Participant Roles 🔍](#process-participant-roles)
   - [Identified Challenges in the AS-IS Process🚧](#identified-challenges-in-the-as-is-process)
@@ -101,7 +101,7 @@ Upon passing the test, a personalized certificate is issued and sent via email.
 This process step will not be further elaborated in the project work due to time and scope constraints.
 
 
-## BPMN Diagram – AS-IS Training Process at GWP🚩
+## BPMN Diagram–AS-IS Training Process at GWP🚩
 ![GWP As-Is Process Diagram](https://github.com/user-attachments/assets/49a511e7-c2d6-4595-92b5-492dc0883cf5)
 
 > The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages. The focus of this group will be on the processes highlighted in green: Training Scheduling, Participant Registration, and Training Completion Processing
@@ -109,7 +109,7 @@ This process step will not be further elaborated in the project work due to time
 
 [Download the complete AS-IS BPMN file HERE](./Documents/As-Is%20Process/AS-IS%20Training%20Process%20at%20GWP.bpmn)
 
-# Project Goals :checkered_flag:
+# Project Goals🏁
 
 The primary goal of this project is to improve the efficiency, scalability, and transparency of GWP’s training program by digitizing and partially automating the end-to-end process—from planning to certificate issuance. Based on the challenges identified in the current (as-is) process, the project focuses on the following objectives:
  
@@ -972,7 +972,7 @@ This resource bundle shows how completion, certification, and non-attendance han
 | Google Sheets | Web based spreadsheet application capable of basic scripting and integrations  |
 
 
-## Next Steps in the Digital Journey🔮
+# Next Steps in the Digital Journey🔮
 
 While the current implementation delivers strong improvements in process efficiency, scalability, and participant experience, several opportunities remain to increase maturity of GWP's digital training operations:
 
