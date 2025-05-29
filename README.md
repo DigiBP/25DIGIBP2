@@ -20,8 +20,8 @@
   - [Process 1: Training Scheduling🗓️](#process-1-training-scheduling)
   - [Process 2: Participant Registration📝](#process-2-participant-registration)
   - [Process 3: Training Completion Processing🎓](#process-3-training-completion-processing)
-- [🛠️ Technologies Used](#technologies-used)
-- [🔮 Next Steps in the Digital Journey](#next-steps-in-the-digital-journey)
+- [Technologies Used🛠️](#technologies-used)
+- [Next Steps in the Digital Journey🔮](#next-steps-in-the-digital-journey)
 
 # GWP Training Program: Process Flow from Planning to Certificate Creation
 
@@ -100,7 +100,7 @@ Upon passing the test, a personalized certificate is issued and sent via email.
 This process step will not be further elaborated in the project work due to time and scope constraints.
 
 
-## 📌BPMN Diagram – AS-IS Training Process at GWP
+## BPMN Diagram – AS-IS Training Process at GWP🚩
 ![GWP As-Is Process Diagram](https://github.com/user-attachments/assets/49a511e7-c2d6-4595-92b5-492dc0883cf5)
 
 > The above BPMN diagram visualizes the current end-to-end training process, highlighting key manual touchpoints and tool handoffs across planning, registration, delivery, and certification stages. The focus of this group will be on the processes highlighted in green: Training Scheduling, Participant Registration, and Training Completion Processing
@@ -118,12 +118,12 @@ The primary goal of this project is to improve the efficiency, scalability, and 
 - Strengthen Participant Experience
 - Increase Transparency and Monitoring
  
-## Process Participant Roles 🔍
+## Process Participant Roles🔍
 - GWP – Coordinating entity (Advisor for financial service providers)
 - Participants – course attendees
 - Lecturer – the course facilitators
 
-## Identified Challenges in the AS-IS Process 🚧 
+## Identified Challenges in the AS-IS Process🚧 
 The current training process at GWP, while structured, presents several challenges that limit efficiency, scalability, and consistency. The following issues have been identified:
 
 ### 🔄 Process Execution Challenges
@@ -155,7 +155,7 @@ The use of disconnected tools such as Pimcore, Outlook, Inxmail, CAS, Excel, and
   There is limited visibility into the real-time status of the training process. Without centralized tracking, it's difficult to monitor progress, identify bottlenecks, or report reliably on process performance.
   
 
-## 🎯 Scope and Process Improvement Focus Areas
+## Scope and Process Improvement Focus Areas🎯
 
 As part of the initial wave of GWP’s digitalization initiative, we focused on automating three key end-to-end processes within the training lifecycle:
 
@@ -218,7 +218,7 @@ This process encompasses all post-registration and post-delivery activities, inc
 
 # TO-BE Process Implementation🚀
 
-## Process 1: Training Scheduling
+## Process 1: Training Scheduling🗓️
 
 ![Training Scheduling BPMN](https://github.com/user-attachments/assets/d65b3f20-d0be-4b4e-95bd-e772b466aca2)
 
@@ -385,7 +385,7 @@ All implementation assets for the *Training Scheduling* process are available in
 These resources provide a complete view of how the scheduling process was orchestrated, automated, and integrated.
 
 
-## Process 2: Participant Registration:
+## Process 2: Participant Registration📝
 ![TO-BE Process – Participant Registration](https://github.com/user-attachments/assets/847e7da2-9c36-4887-b403-053fcbfcab2b)
 
 ---
@@ -870,7 +870,7 @@ _Note: The code for the registration website is included as a collapsable sectio
 These components illustrate how the registration flow was automated and connected to our CRM layer.
 
 
-## Process 3: Training Completion Processing
+## Process 3: Training Completion Processing🎓
 
 ![Process 3 – Training Completion BPMN](https://github.com/user-attachments/assets/09a86e8a-5623-429b-b1c9-60f9169ab139)
 
@@ -959,7 +959,7 @@ All supporting materials for the *Training Completion Processing* workflow are s
 
 This resource bundle shows how completion, certification, and non-attendance handling were digitalized.
 
-# Technologies used 
+# Technologies used🛠️
 | Technology | Purpose |
 | ------------- |------------------------------------
 | Camunda 7 | Workflow automation, process orchestration, and BPM execution |
@@ -971,7 +971,7 @@ This resource bundle shows how completion, certification, and non-attendance han
 | Google Sheets | Web based spreadsheet application capable of basic scripting and integrations  |
 
 
-## 🔮 Next Steps in the Digital Journey
+## Next Steps in the Digital Journey🔮
 
 While the current implementation delivers strong improvements in process efficiency, scalability, and participant experience, several opportunities remain to increase maturity of GWP's digital training operations:
 
