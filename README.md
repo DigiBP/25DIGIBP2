@@ -856,6 +856,20 @@ In this step, the system verifies whether the participant already exists in the 
 ### End Event: Participant Registered
 Once the confirmation email has been sent and the CRM has been updated (if needed), the process concludes with a **None End Event** in Camunda, signaling that the participant registration workflow is complete.
 
+---
+
+### 📂 Download Implementation Assets
+
+The following repository folder contains all artifacts for *Participant Registration*, including:
+
+- BPMN model for Camunda  
+- Make.com scenario for automated confirmations
+_Note: The code for the registration website is included as a collapsable section in itself, therefore to avoid redundancy, it is not present in the folder referenced below_
+
+➡️ [View files for Process 2](./Documents/To-Be%20Process/process-2-participant-registration)
+
+These components illustrate how the registration flow was automated and connected to our CRM layer.
+
 
 ## Process 3: Training Completion Processing
 
@@ -933,6 +947,18 @@ Participants whose attendance status remains empty or does not equal `"Yes"` are
 ### End Event: Completion Processed
 The process concludes once both the certificate issuance and non-attendee notifications have been executed. The final **None End Event** in Camunda signals that the training session has been fully closed from an administrative standpoint.
 
+---
+
+### 📂 Explore Process Artifacts
+
+All supporting materials for the *Training Completion Processing* workflow are stored in the following folder:
+
+- Certificate logic in Camunda BPMN and forms
+- Make.com automation workflows (JSON)  
+
+➡️ [Access files for Process 3](./Documents/To-Be%20Process/process-3-training-completion-processing)
+
+This resource bundle shows how completion, certification, and non-attendance handling were digitalized.
 
 # Technologies used 
 | Technology | Purpose |
